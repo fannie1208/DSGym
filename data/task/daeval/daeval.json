@@ -1,0 +1,3159 @@
+[
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean fare paid by the passengers.",
+    "answer": "[['mean_fare', '34.65']]",
+    "data": [
+      "/data/daeval/test_ave.csv"
+    ],
+    "metadata": {
+      "original_id": 0,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean fare using Python's built-in statistics module or appropriate statistical method in pandas. Rounding off the answer to two decimal places.",
+      "format": "@mean_fare[mean_fare_value] where \"mean_fare_value\" is a floating-point number rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Generate a new feature called \"FamilySize\" by summing the \"SibSp\" and \"Parch\" columns. Then, calculate the Pearson correlation coefficient (r) between the \"FamilySize\" and \"Fare\" columns.",
+    "answer": "[['correlation_coefficient', '0.21']]",
+    "data": [
+      "/data/daeval/test_ave.csv"
+    ],
+    "metadata": {
+      "original_id": 5,
+      "keywords": [
+        "Feature Engineering",
+        "Correlation Analysis"
+      ],
+      "constraints": "Create a new column 'FamilySize' that is the sum of 'SibSp' and 'Parch' for each row.\nCalculate the Pearson correlation coefficient between 'FamilySize' and 'Fare'\nDo not perform any further data cleaning or preprocessing steps before calculating the correlation.",
+      "format": "@correlation_coefficient[r_value]\nwhere \"r_value\" is the Pearson correlation coefficient between 'FamilySize' and 'Fare', a number between -1 and 1, rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new column called \"AgeGroup\" that categorizes the passengers into four age groups: 'Child' (0-12 years old), 'Teenager' (13-19 years old), 'Adult' (20-59 years old), and 'Elderly' (60 years old and above). Then, calculate the mean fare for each age group.",
+    "answer": "[['mean_fare_elderly', '43.47'], ['mean_fare_teenager', '31.98'], ['mean_fare_child', '31.09'], ['mean_fare_adult', '35.17']]",
+    "data": [
+      "/data/daeval/test_ave.csv"
+    ],
+    "metadata": {
+      "original_id": 6,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Make sure to round the mean fare of each group to 2 decimal places.",
+      "format": "@mean_fare_child[mean_fare], @mean_fare_teenager[mean_fare], @mean_fare_adult[mean_fare], @mean_fare_elderly[mean_fare], where \"mean_fare\" is a float number rounded to 2 decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Apply the linear regression algorithm from the sklearn library to predict whether a passenger survived or not based on the features 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', and 'Embarked'. Encode 'Sex' and 'Embarked' to numerical values before applying the model. Split the dataset into a training set (80%) and a testing set (20%), train the model on the training set, and evaluate its performance on the testing set using the accuracy score. Ensure that the train_test_split function's random_state parameter is set to 42 for consistency.",
+    "answer": "[['prediction_accuracy', '0.78']]",
+    "data": [
+      "/data/daeval/test_ave.csv"
+    ],
+    "metadata": {
+      "original_id": 7,
+      "keywords": [
+        "Machine Learning"
+      ],
+      "constraints": "Use one-hot encoding for the 'Sex' and 'Embarked' features. Use the \"linear regression\" model provided by the sklearn library in Python.",
+      "format": "@prediction_accuracy[accuracy], where \"accuracy\" is a float number rounded to 2 decimal places and has a range of 0.0 to 1.0.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean value of the \"Close Price\" column.",
+    "answer": "[['mean_close_price', '570.68']]",
+    "data": [
+      "/data/daeval/GODREJIND.csv"
+    ],
+    "metadata": {
+      "original_id": 9,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Use the built-in Python (numpy or pandas) to calculate the mean. Do not use any pre-built packages or libraries for mean calculation other than numpy or pandas. The calculation should be done on the whole \"Close Price\" column. Values in this column should not be rounded or changed in any way before the calculation.",
+      "format": "@mean_close_price[mean_value], where \"mean_value\" is a float number rounded to two decimal places. This value should be between the highest and lowest \"Close Price\" given in the dataset.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new feature called \"Price Range\" which represents the difference between the \"High Price\" and \"Low Price\" for each row. Calculate the mean, median, and standard deviation of this new feature.",
+    "answer": "[['price_range_mean', '16.65'], ['price_range_std_dev', '6.72'], ['price_range_median', '15.67']]",
+    "data": [
+      "/data/daeval/GODREJIND.csv"
+    ],
+    "metadata": {
+      "original_id": 14,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Make sure to use the correct columns for calculating the \"Price Range\". All calculations should be performed up to two decimal places.",
+      "format": "@price_range_mean[mean]: The mean should be a single real number rounded to two decimal places. @price_range_median[median]: The median should be a single real number rounded to two decimal places. @price_range_std_dev[std_dev]: The standard deviation should be a single real number rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the \"Mar.2019\" column.",
+    "answer": "[['mean_mar_2019', '171.44'], ['sd_mar_2019', '188.25']]",
+    "data": [
+      "/data/daeval/unemployement_industry.csv"
+    ],
+    "metadata": {
+      "original_id": 18,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Outliers are to be pruned via the interquartile range method before calculating the mean and standard deviation. Handle missing values by using listwise deletion method. Report the measures rounded to two decimal places.",
+      "format": "@mean_mar_2019[mean] @sd_mar_2019[sd], where \"mean\" and \"sd\" are numbers, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Apply machine learning techniques to predict the employment level in March 2020 based on the data from March 2019. Split the dataset into a 70-30 split for training and testing sets, train a simple linear regression model on the training set, and evaluate its performance on the testing set using Mean Squared Error as the evaluation metric.",
+    "answer": "[['Mean_Squared_Error', '11439.60']]",
+    "data": [
+      "/data/daeval/unemployement_industry.csv"
+    ],
+    "metadata": {
+      "original_id": 23,
+      "keywords": [
+        "Machine Learning",
+        "Summary Statistics"
+      ],
+      "constraints": "Split the dataset with a 70-30 split for training and testing sets with a random seed of 42. Use a simple linear regression model for training and evaluate the model's performance by calculating the Mean Squared Error.",
+      "format": "@Mean_Squared_Error[MSE], where \"MSE\" is a number rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean age of the individuals in the dataset.",
+    "answer": "[['mean_age', '39.21']]",
+    "data": [
+      "/data/daeval/insurance.csv"
+    ],
+    "metadata": {
+      "original_id": 24,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Ignore rows with missing values in the age column. Use Python's built-in function to calculate the mean.",
+      "format": "@mean_age[value] where \"value\" is a number between 0 and 100, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Check if the distribution of BMI values in the dataset follows a normal distribution.",
+    "answer": "[['bmi_distribution', 'normal']]",
+    "data": [
+      "/data/daeval/insurance.csv"
+    ],
+    "metadata": {
+      "original_id": 25,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Consider the distribution as normal if the absolute value of skewness is less than 0.5. Calculate skewness using Python's built-in function.",
+      "format": "@bmi_distribution[status] where \"status\" is a string that can either be \"normal\" or \"not_normal\", based on the conditions specified in the constraints.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the correlation coefficient between the charges incurred by individuals and the number of children they have.",
+    "answer": "[['correlation_coefficient', '0.07']]",
+    "data": [
+      "/data/daeval/insurance.csv"
+    ],
+    "metadata": {
+      "original_id": 26,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Ignore rows with missing values in charges and children columns. Calculate the Pearson correlation coefficient.",
+      "format": "@correlation_coefficient[value] where \"value\" is a number between -1 and 1, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify the outliers in the charges incurred by individuals using the Z-score method.",
+    "answer": "[['median_charges_outliers', '40974.16'], ['mean_charges_outliers', '42103.95'], ['total_outliers', '139']]",
+    "data": [
+      "/data/daeval/insurance.csv"
+    ],
+    "metadata": {
+      "original_id": 27,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Apply the Z-score method for outlier detection using the 1.5xIQR rule. Consider any value that falls below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR as an outlier. Report the total number of outliers, and the mean and median charges of these identified outliers.",
+      "format": "@total_outliers[total_outliers] \n@mean_charges_outliers[mean_charges_outliers] \n@median_charges_outliers[median_charges_outliers] \nwhere \"total_outliers\" is an integer, \"mean_charges_outliers\" and \"median_charges_outliers\" are floating-point numbers rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a linear regression machine learning model using the Scikit-learn library to predict the medical charges based on the age and BMI of individuals. Evaluate the performance of the model using the Root Mean Square Error (RMSE) evaluation metric only.",
+    "answer": "[['model_rmse', '11464.74']]",
+    "data": [
+      "/data/daeval/insurance.csv"
+    ],
+    "metadata": {
+      "original_id": 30,
+      "keywords": [
+        "Machine Learning",
+        "Feature Engineering"
+      ],
+      "constraints": "Use the linear regression model available in the Scikit-Learn library. Split the data into training and testing sets with 80% of the data used for training and 20% used for testing. Use a random state of 42 for the split. The predictor variables are 'age' and 'bmi', and the target variable is 'charges'. Implement RMSE for the model evaluation. Ignore any row with missing values present in these three columns for this analysis.",
+      "format": "@model_rmse[RMSE_value], where RMSE value is a positive number rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the \"importance.score\" column.",
+    "answer": "[['importance_score_std', '0.01'], ['importance_score_mean', '0.00']]",
+    "data": [
+      "/data/daeval/imp.score.ldlr.metabolome.csv"
+    ],
+    "metadata": {
+      "original_id": 32,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean and standard deviation to two decimal places for the \"importance.score\" column. Ignore any null or missing values in the calculations. The calculations are to be done using standard statistical methods without applying any transformations or filters to the data.",
+      "format": "@importance_score_mean[mean] @importance_score_std[std_dev] where \"mean\" and \"std_dev\" are non-negative numbers rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between the \"row retention time\" and \"importance.score\" columns?",
+    "answer": "[['p_value', '0.4058'], ['relationship_type', 'none'], ['correlation_coefficient', '-0.04']]",
+    "data": [
+      "/data/daeval/imp.score.ldlr.metabolome.csv"
+    ],
+    "metadata": {
+      "original_id": 34,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between \"row retention time\" and \"importance.score\". Assess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05. Report the p-value associated with the correlation test. Consider the relationship to be linear if the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5. Consider the relationship to be nonlinear if the p-value is less than 0.05 and the absolute value of r is less than 0.5. If the p-value is greater than or equal to 0.05, report that there is no significant correlation. Ignore any null or missing values in performing the correlation test.",
+      "format": "@correlation_coefficient[r_value] @p_value[p_value] @relationship_type[relationship_type] where \"r_value\" is a number between -1 and 1, rounded to two decimal places. \"p_value\" is a number between 0 and 1, rounded to four decimal places. \"relationship_type\" is a string that can either be \"linear\", \"nonlinear\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify and remove any outliers in the \"row retention time\" column using the Z-score method with a Z-score threshold of 3. Provide the number of removed outliers.",
+    "answer": "[['removed_outliers_count', '0']]",
+    "data": [
+      "/data/daeval/imp.score.ldlr.metabolome.csv"
+    ],
+    "metadata": {
+      "original_id": 35,
+      "keywords": [
+        "Outlier Detection",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Use the Z-score method to identify outliers in the \"row retention time\" column. Any data point with a Z-score greater than 3 or less than -3 is considered an outlier and should be removed.",
+      "format": "@removed_outliers_count[count] where \"count\" is a non-negative integer indicating the count of removed outliers.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the mean number of cases recorded across all countries and years?",
+    "answer": "[['mean_cases', '2081990']]",
+    "data": [
+      "/data/daeval/estimated_numbers.csv"
+    ],
+    "metadata": {
+      "original_id": 55,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean of the column 'No. of cases'. Convert the data type of 'No. of cases' column from Object (string) to Int64 before performing calculations. Ignore those records where 'No. of cases' column value is Null or empty.",
+      "format": "@mean_cases[mean_value] where \"mean_value\" is a positive integer.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Which country has the highest number of deaths recorded in a single year?",
+    "answer": "[['max_deaths_country', 'Nigeria'], ['max_deaths_year', '2010']]",
+    "data": [
+      "/data/daeval/estimated_numbers.csv"
+    ],
+    "metadata": {
+      "original_id": 56,
+      "keywords": [
+        "Distribution Analysis",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the maximum value in the 'No. of deaths' column. Convert the data type of 'No. of deaths' column from Object (string) to Int64 before performing calculations. Ignore those records where 'No. of deaths' column value is Null or empty. Identify the corresponding country and year for the highest number of deaths.",
+      "format": "@max_deaths_country[country_name] @max_deaths_year[year] where \"country_name\" is a string indicating the name of the country and \"year\" is an integer indicating the year in which the maximum deaths occurred.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between the number of cases and the number of deaths recorded?",
+    "answer": "[['correlation_coefficient', '0.97']]",
+    "data": [
+      "/data/daeval/estimated_numbers.csv"
+    ],
+    "metadata": {
+      "original_id": 57,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between number of cases and number of deaths. Convert the data types of 'No. of cases' and 'No. of deaths' column from Object (String) to Int64 before performing calculations. Do this for complete data rather than specific country or year.",
+      "format": "@correlation_coefficient[r_value] where \"r_value\" is a number between -1 and 1, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the percentage of missing values in the \"No. of cases_min\" column? How does this percentage compare to the percentage of missing values in the \"No. of deaths_max\" column?",
+    "answer": "[['percentage_cases_min', '36.45'], ['percentage_deaths_max', '38.79']]",
+    "data": [
+      "/data/daeval/estimated_numbers.csv"
+    ],
+    "metadata": {
+      "original_id": 58,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the percentage of missing values for both \"No. of cases_min\" and \"No. of deaths_max\" column. Report the exact percentage values.",
+      "format": "@percentage_cases_min[percentage], @percentage_deaths_max[percentage] where \"percentage\" is a number between 0 and 100, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Among the countries in the \"Americas\" region, which country has the highest average number of cases recorded over the years?",
+    "answer": "[['country_name', 'Congo']]",
+    "data": [
+      "/data/daeval/estimated_numbers.csv"
+    ],
+    "metadata": {
+      "original_id": 59,
+      "keywords": [
+        "Distribution Analysis",
+        "Summary Statistics",
+        "Feature Engineering"
+      ],
+      "constraints": "Calculate the average of \"No. of cases\" for each country in the \"Americas\" region and report the country with the highest average number of cases. Count only complete years, i.e., exclude years with missing data.",
+      "format": "@country_name[country] where \"country\" is a string representing the name of the country with the highest average number of cases.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the wage column.",
+    "answer": "[['std_wage', '4.66'], ['mean_wage', '6.31']]",
+    "data": [
+      "/data/daeval/beauty and the labor market.csv"
+    ],
+    "metadata": {
+      "original_id": 64,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "The mean and standard deviation of the wage should be calculated using pandas' `mean()` and `std()` methods respectively. Do not apply any transformations, filtering or alteration to the wage data.",
+      "format": "@mean_wage[mean_value] @std_wage[std_value] where \"mean_value\" and \"std_value\" are numbers with up to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform feature engineering by creating a new feature called \"experience_score\" that is calculated by multiplying the exper column with the looks column. Then, calculate the Pearson correlation coefficient between the \"experience_score\" feature and the wage column.",
+    "answer": "[['correlation', '0.252']]",
+    "data": [
+      "/data/daeval/beauty and the labor market.csv"
+    ],
+    "metadata": {
+      "original_id": 69,
+      "keywords": [
+        "Feature Engineering",
+        "Correlation Analysis"
+      ],
+      "constraints": "Create \"experience_score\" by directly multiplying values of exper and looks column. Calculate Pearson correlation coefficient between the new feature \"experience_score\" and wage. Correlation should be calculated up to three decimal places.",
+      "format": "@correlation[correlation] where \"correlation\" is a number representing the correlation coefficient, rounded to three decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform machine learning by training a linear regression model to predict the wage based on the features exper, looks, union, goodhlth, black, female, married, south, bigcity, smllcity, service, and educ. Use the Root Mean Squared Error (RMSE) for evaluating the model's performance.",
+    "answer": "[['RMSE', '3.63']]",
+    "data": [
+      "/data/daeval/beauty and the labor market.csv"
+    ],
+    "metadata": {
+      "original_id": 70,
+      "keywords": [
+        "Machine Learning",
+        "Summary Statistics"
+      ],
+      "constraints": "Perform the machine learning task using the sklearn library's LinearRegression() function. Split the dataset into a 70% training set and a 30% test set. Set the random seed to 42 for reproducibility of the results. Calculate the RMSE on the test set.",
+      "format": "@RMSE[RMSE_value] where \"RMSE_value\" is a number rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the \"Volume\" column.",
+    "answer": "[['mean_volume', '22607406.19'], ['std_dev_volume', '8254791.71']]",
+    "data": [
+      "/data/daeval/microsoft.csv"
+    ],
+    "metadata": {
+      "original_id": 71,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Use the built-in functions in Python's pandas library for computation. Round the result to 2 decimal places.",
+      "format": "@mean_volume[mean_volume]\\n@std_dev_volume[std_dev_volume]\\nwhere \"mean_volume\" and \"std_dev_volume\" are floating-point numbers rounded to 2 decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Check if the \"Close\" column adheres to a normal distribution.",
+    "answer": "[['normality_test_result', 'Non-normal']]",
+    "data": [
+      "/data/daeval/microsoft.csv"
+    ],
+    "metadata": {
+      "original_id": 72,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Use the Shapiro-Wilk test to assess the normality of the \"Close\" column. If the p-value is less than 0.05, consider the data to be non-normally distributed. Otherwise, consider it to be normally distributed.",
+      "format": "@normality_test_result[normality_test_result]\\nwhere \"normality_test_result\" a string that is either \"Normal\" or \"Non-normal\" based on the p-value from the Shapiro-Wilk test.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the correlation coefficient between the \"High\" and \"Low\" columns.",
+    "answer": "[['correlation_coefficient', '1.0']]",
+    "data": [
+      "/data/daeval/microsoft.csv"
+    ],
+    "metadata": {
+      "original_id": 73,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Use the Pearson correlation coefficient for computation. Round the result to 2 decimal places.",
+      "format": "@correlation_coefficient[correlation_coefficient]\\nwhere \"correlation_coefficient\" is a floating-point number rounded to 2 decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new column called \"Daily Return\" that calculates the percentage change in the \"Close\" price from the previous day. Calculate the mean and standard deviation of the \"Daily Return\" column.",
+    "answer": "[['daily_return_std', '0.94'], ['daily_return_mean', '-0.14']]",
+    "data": [
+      "/data/daeval/microsoft.csv"
+    ],
+    "metadata": {
+      "original_id": 75,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate \"Daily Return\" as ((Close price of today - Close price of previous day) / Close price of previous day) * 100. Calculate mean and standard deviation to two decimal places.",
+      "format": "@daily_return_mean[mean], @daily_return_std[std] where \"mean\" and \"std\" are the mean and standard deviation of the \"Daily Return\" column, respectively, rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform comprehensive data preprocessing on the \"Date\" column to extract the month and year information. Calculate the average closing price for each month and year combination. Return the month and year combination which has the highest average closing price.",
+    "answer": "[['Highest_Monthly_Average_Close_Price', '1, 2018, 88.32']]",
+    "data": [
+      "/data/daeval/microsoft.csv"
+    ],
+    "metadata": {
+      "original_id": 77,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Summary Statistics"
+      ],
+      "constraints": "Set the start of each month to be the first day of the month and the end of the month to be the last day of the month.\nThe calculation of the average closing price should be done using the arithmetic mean. \nFor ties, return the most recent month and year combination.",
+      "format": "@Highest_Monthly_Average_Close_Price[month, year, average_close_price]\nwhere \"month\" is an integer between 1 and 12, \"year\" is an integer, and \"average_close_price\" is a float rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the correlation coefficient between ApplicantIncome and LoanAmount.",
+    "answer": "[['correlation_coefficient', '0.49']]",
+    "data": [
+      "/data/daeval/test_Y3wMUE5_7gLdaTN.csv"
+    ],
+    "metadata": {
+      "original_id": 105,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient to assess the strength and direction of linear relationship between ApplicantIncome and LoanAmount. Ignore the rows with missing values for either of the two columns. Round the correlation coefficient to two decimal places.",
+      "format": "@correlation_coefficient[corr_coeff] where \"corr_coeff\" is a number between -1 and 1, rounded to two decimal places and represents the Pearson correlation coefficient between ApplicantIncome and LoanAmount.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Generate a new feature called \"TotalIncome\" by adding the ApplicantIncome and CoapplicantIncome columns. Calculate the mean and standard deviation of the TotalIncome column.",
+    "answer": "[['mean_total_income', '6375.18'], ['std_dev_total_income', '5199.42']]",
+    "data": [
+      "/data/daeval/test_Y3wMUE5_7gLdaTN.csv"
+    ],
+    "metadata": {
+      "original_id": 108,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean and standard deviation using the Panda's DataFrame mean() and std() functions distinctively. Round the results to two decimal places.",
+      "format": "@mean_total_income[mean] @std_dev_total_income[std_dev] where \"mean\" is a float number that represents the mean value of the TotalIncome column rounded to two decimal places, and \"std_dev\" is a float number that represents the standard deviation of the TotalIncome column also rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Explore the distribution of the LoanAmount column based on different values of the Education column. Determine if there is a significant difference in the loan amount between individuals with different educational backgrounds.",
+    "answer": "[['graduate_mean_loan', '141.36'], ['not_graduate_mean_loan', '118.57'], ['significance', 'significant']]",
+    "data": [
+      "/data/daeval/test_Y3wMUE5_7gLdaTN.csv"
+    ],
+    "metadata": {
+      "original_id": 109,
+      "keywords": [
+        "Distribution Analysis",
+        "Feature Engineering"
+      ],
+      "constraints": "Calculate the mean of LoanAmount for individuals with a 'Graduate' educational background and individuals with a 'Not Graduate' educational background separately. Test if there is a significant difference between these two groups using a t-test with a significance level (alpha) of 0.05. If the p-value is less than 0.05, report there is a significant difference, else report there is no significant difference.",
+      "format": "@graduate_mean_loan[mean], @not_graduate_mean_loan[mean], @significance[significant/no significant] where \"mean\" is a number (float), rounded to two decimal places. \"significant\" or \"no significant\" signifies if there is a significant difference between two groups under the significance level 0.05.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Which country has the highest happiness score?",
+    "answer": "[['country_with_highest_score', 'Switzerland']]",
+    "data": [
+      "/data/daeval/2015.csv"
+    ],
+    "metadata": {
+      "original_id": 114,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Find the country with the highest happiness score in the dataset. If two or more countries have the same highest happiness score, return all of them.",
+      "format": "@country_with_highest_score[country_name]",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Which variable has the strongest correlation with the happiness scores among countries? Is this correlation positive or negative?",
+    "answer": "[['correlation_type', 'negative'], ['strongest_correlation_variable', 'Happiness Rank']]",
+    "data": [
+      "/data/daeval/2015.csv"
+    ],
+    "metadata": {
+      "original_id": 117,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) between the happiness score and all other numerical variables in the dataset. The variable which has the highest magnitude of r (ignoring the sign) is the one with the strongest correlation.",
+      "format": "@strongest_correlation_variable[variable_name] where \"variable_name\": the column name of the variable with the strongest correlation. @correlation_type[positive/negative] where \"positive/negative\": if the correlation is positive or negative based on the sign of the correlation coefficient.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a linear relationship between the GDP per capita and the life expectancy score in the dataset? Conduct linear regression and use the resulting coefficient of determination (R-squared) to evaluate the model's goodness of fit.",
+    "answer": "[['coefficient_determination', '0.67'], ['model_fit', 'poor fit']]",
+    "data": [
+      "/data/daeval/2015.csv"
+    ],
+    "metadata": {
+      "original_id": 118,
+      "keywords": [
+        "Correlation Analysis",
+        "Machine Learning"
+      ],
+      "constraints": "Calculate the coefficient of determination (R-squared) for the given relationship. If R-squared is equal to or greater than 0.7, consider the model a good fit. Else, consider it a poor fit.",
+      "format": "@coefficient_determination[R_square], @model_fit[model_fit], where \"R_square\" is the value of the coefficient of determination rounded to two decimal places and \"model_fit\" is a string that is either \"good fit\" or \"poor fit\" based on the calculated R-squared value.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Which country has the highest average number of daily vaccinations per million people?",
+    "answer": "[['country_with_highest_average_daily_vaccinations', 'Gibraltar']]",
+    "data": [
+      "/data/daeval/country_vaccinations.csv"
+    ],
+    "metadata": {
+      "original_id": 123,
+      "keywords": [
+        "Summary Statistics",
+        "Distribution Analysis"
+      ],
+      "constraints": "{\nBased on the current available data without null values in the column of daily vaccinations per million people.\nNo tie of the maximum value is allowed. In case of a tie, consider the country with the first appeared maximum value.\n}",
+      "format": "{\n@country_with_highest_average_daily_vaccinations[country_name]\nWhere \"country_name\" is a string.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Can we predict the number of people fully vaccinated per hundred people based on the total number of vaccinations administered and the number of people vaccinated per hundred people?",
+    "answer": "[['significant_predictor', 'yes,yes'], ['r_squared', '0.6059']]",
+    "data": [
+      "/data/daeval/country_vaccinations.csv"
+    ],
+    "metadata": {
+      "original_id": 125,
+      "keywords": [
+        "Correlation Analysis",
+        "Machine Learning"
+      ],
+      "constraints": "{\nPerform a multiple linear regression analysis using the total number of vaccinations administered and the number of people vaccinated per hundred people as predictors.\nThe dependent variable is the number of people fully vaccinated per hundred people.\nOnly consider data entries without null values in the three mentioned columns.\nUse a significance level (alpha) of 0.05 for the predictors.\nConsider the predictors to be significant if the p-value is less than 0.05.\nCalculate the R-squared value of the model.\n}",
+      "format": "{\n@significant_predictor[predictor_1,predictor_2]\n@r_squared[r_squared_value]\nWhere \"predictor_1,predictor_2\" can be \"yes,yes\", \"yes,no\", \"no,yes\", or \"no,no\" based on the p-values of the predictors.\nWhere \"r_squared_value\" is a number between 0 and 1, rounded to four decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify and count the number of outliers in the fare paid by passengers using the Z-score method.",
+    "answer": "[['outlier_count', '20']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 132,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "{\nCalculate the Z-score for each fare using the mean and standard deviation of the fare data.\nDetermine an outlier to be any fare with a Z-score greater than 3 or less than -3.\n}",
+      "format": "{\n@outlier_count[count]\nwhere \"count\" is a positive integer or zero representing the total number of outliers found.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform comprehensive data preprocessing for the dataset by handling missing values in the age and cabin columns. Use the deletion strategy for the missing values in the cabin column and imputation strategy for the missing values in the age column.",
+    "answer": "[['median_age', '36.0'], ['row_count', '204']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 133,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "{\nFor the deletion strategy in the cabin column, remove any row that has a missing value in the cabin column.\nFor the imputation strategy in the age column, replace the missing values with the median age of all passengers.\nReport on the new total number of rows after deletion and the median age used for imputation.\n}",
+      "format": "{\n@row_count[count]\n@median_age[value]\nwhere \"count\" is a positive integer representing the total number of rows after deletion.\nwhere \"value\" is a positive real number representing the median age used for imputation, rounded to one decimal place.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform distribution analysis on the fare paid by passengers for each passenger class separately. Use the Shapiro-Wilk Test for normality. For each passenger class, the null hypothesis is that the fare follows a normal distribution.",
+    "answer": "[['p_value_class_1', '0.0000'], ['p_value_class_3', '0.0000'], ['p_value_class_2', '0.0000']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 136,
+      "keywords": [
+        "Distribution Analysis",
+        "Summary Statistics"
+      ],
+      "constraints": "The Shapiro-Wilk Test should be conducted separately for each passenger class. Use a significance level (alpha) of 0.05. If the p-value is less than 0.05, reject the null hypothesis.",
+      "format": "@p_value_class_1[p_value_1], @p_value_class_2[p_value_2], @p_value_class_3[p_value_3] where 'p_value_1', 'p_value_2', and 'p_value_3' are the p-values of the Shapiro-Wilk Test for the 1st, 2nd and 3rd class passengers respectively, rounded to four decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform feature engineering by creating a new binary feature called \"IsAlone\" that indicates whether a passenger is traveling alone or with family. Use the \"SibSp\" and \"Parch\" columns to determine if a passenger has any accompanying family members. Then, train a logistic regression machine learning model using the new feature and the Survival rate as the output variable.",
+    "answer": "[['model_score', '0.61']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 137,
+      "keywords": [
+        "Feature Engineering",
+        "Machine Learning"
+      ],
+      "constraints": "The logistic regression model should be implemented with scikit-learn’s LogisticRegression with default parameters. Use the 'IsAlone' feature and 'Survived' as the output variable. The model should be trained using a 70:30 train-test split, balancing the class weights. Use a random seed of 42 for reproducibility.",
+      "format": "@model_score[model_accuracy] where 'model_accuracy' is a number between 0 and 1, rounded to 2 decimal places, representing the accuracy of the model on the test set.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Question 2: Are the percentage of votes received by the Democratic party in a particular county normally distributed?",
+    "answer": "[['normality_status', 'not normal']]",
+    "data": [
+      "/data/daeval/election2016.csv"
+    ],
+    "metadata": {
+      "original_id": 139,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "{Test whether the 'per_dem' column follows a normal distribution using the Shapiro-Wilk test for normality. Set the significance level (alpha) at 0.05. If p-value is less than 0.05, reject the null hypothesis and report that the data is not normally distributed. If p-value is greater than or equal to 0.05, fail to reject the null hypothesis and report that the data is normally distributed.}",
+      "format": "{@normality_status[status] where \"status\" is a string that could either be \"normal\" when the data follows normal distribution or \"not normal\" when the data does not follow a normal distribution.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Question 2: Is there a relationship between the difference in votes received by the Democratic and Republican parties and their percentage point difference?",
+    "answer": "[['relationship_type', 'none'], ['correlation_coefficient', '0.02'], ['p_value', '0.1704']]",
+    "data": [
+      "/data/daeval/election2016.csv"
+    ],
+    "metadata": {
+      "original_id": 142,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between the difference in votes and the percentage point difference. Assess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05. Report the p-value associated with the correlation test. Consider the relationship to be linear if the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5. Consider the relationship to be nonlinear if the p-value is less than 0.05 and the absolute value of r is less than 0.5. If the p-value is greater than or equal to 0.05, report that there is no significant correlation.",
+      "format": "@correlation_coefficient[r_value] @p_value[p_value] @relationship_type[relationship_type] where r_value is a number between -1 and 1, rounded to two decimal places. Where p_value is a number between 0 and 1, rounded to four decimal places. Where relationship_type is a string that can either be \"linear\", \"nonlinear\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Determine the skewness of the fares paid by the passengers on the Titanic.",
+    "answer": "[['fare_skewness', '4.79']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 174,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "For the calculation of skewness, use the pandas DataFrame method skew(). No other method should be employed for calculation.",
+      "format": "@fare_skewness[fare_skew_value] \nwhere \"fare_skew_value\" is a floating-point number rounded to 2 decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the median age of male passengers who survived and paid a fare greater than the average fare. Calulate only the ages that are not null.",
+    "answer": "[['median_age', '31.50']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 176,
+      "keywords": [
+        "Summary Statistics",
+        "Correlation Analysis"
+      ],
+      "constraints": "{\nAll null values in the \"Age\" column are not considered in the calculation.\nThe passengers considered for this question should meet all the following conditions: they are male; they survived; their fare is greater than the average fare.\n}",
+      "format": "{\n@median_age[median_age]\nwhere \"median_age\" is a number rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform comprehensive data preprocessing on the dataset. Handle missing values in the \"Embarked\" column by imputing them with the mode value. Normalize the \"Fare\" column using Min-Max scaling. Encode the categorical variable \"Sex\" using Label Encoding, where \"male\" is coded as 1 and \"female\" as 0. Calculate the number of each label after processing \"Sex\" and the minimum, maximum and mean of \"Fare\" after scaling.",
+    "answer": "[['sex_encoded_count', '314, 577'], ['fare_after_scaling', '0.00, 1.00, 0.0629']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 178,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Feature Engineering"
+      ],
+      "constraints": "{\n\"Embarked\" missing values should be filled with the mode value.\n\"Fare\" should be normalized using Min-Max scaling, where Min is the minimum value of \"Fare\" before scaling and Max is the maximum.\n\"Sex\" should be encoded using Label Encoding, where \"male\" is 1 and \"female\" is 0.\nCaculate the count of each label of \"Sex\" after encoding and the min, max and mean of \"Fare\" values after scaling.\n}",
+      "format": "{\n@sex_encoded_count[label_0_count, label_1_count]\n@fare_after_scaling[min_fare, max_fare, mean_fare]\nwhere \"label_0_count\" and \"label_1_count\" are numbers indicating the count of 0 and 1 in the encoded \"Sex\" column, respectively.\nwhere \"min_fare\", \"max_fare\", and \"mean_fare\" are the minimum, maximum, and mean of the \"Fare\" column after Min-Max scaling, respectively. \"min_fare\" and \"max_fare\" are rounded to two decimal places, while \"mean_fare\" is rounded to four decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the Pearson correlation coefficient between the age and fare variables for passengers who survived and were in first class.",
+    "answer": "[['correlation_coefficient', '-0.123']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 179,
+      "keywords": [
+        "Summary Statistics",
+        "Correlation Analysis"
+      ],
+      "constraints": "Use only passengers that survived and were in the first class. Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between age and fare.",
+      "format": "@correlation_coefficient[c_value] where \"c_value\" is a number between -1 and 1, rounded to three decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform outlier detection on the fare variable for each passenger class separately. Use the Z-score method and determine the number of outliers in each class.",
+    "answer": "[['class2_outliers', '7'], ['class1_outliers', '3'], ['class3_outliers', '14']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 180,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Validate outliers using the Z-score method with a threshold of 3. Use separate calculations for each passenger class (1, 2, and 3).",
+      "format": "@class1_outliers[o1_value], @class2_outliers[o2_value], @class3_outliers[o3_value] where \"o1_value\", \"o2_value\", and \"o3_value\" are non-negative integers representing the count of outliers in each class.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Which column(s) contain missing values in the dataset?",
+    "answer": "[['missing_columns_in_object_type', 'author, urlToImage']]",
+    "data": [
+      "/data/daeval/fb_articles_20180822_20180829_df.csv"
+    ],
+    "metadata": {
+      "original_id": 207,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "This question requires a straightforward identification of columns with missing values in the dataset. Only count the missing values in columns where the data type is 'object' (i.e., strings). Do not include columns of other data types and consider a \"missing value\" as one that is recorded as 'NaN', 'na', 'null', or an empty string in the dataset.",
+      "format": "@missing_columns_in_object_type[missing_column1, missing_column2,…] whereby 'missing_column1', 'missing_column2', etc. are string names of the columns with missing values. The answer should not contain any duplicates and should be sorted alphabetically for easy checking.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Calculate the mean and standard deviation of the \"compound\" sentiment score column.",
+    "answer": "[['compound_mean', '0.141'], ['compound_std', '0.899']]",
+    "data": [
+      "/data/daeval/fb_articles_20180822_20180829_df.csv"
+    ],
+    "metadata": {
+      "original_id": 208,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean and standard deviation of the 'compound' sentiment score using standard statistical methods. Please use a standard approach and do not use any approximations or assumptions. Note that the 'compound' column contains no missing values according to the scenario information.",
+      "format": "@compound_mean[mean_value]\\n@compound_std[std_value] where 'mean_value' and 'std_value' should be rounded to three decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Is there any correlation between the \"neg\" and \"pos\" sentiment score columns? If so, what is the correlation coefficient?",
+    "answer": "[['correlation_coefficient', '-0.24']]",
+    "data": [
+      "/data/daeval/fb_articles_20180822_20180829_df.csv"
+    ],
+    "metadata": {
+      "original_id": 209,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between 'neg' and 'pos' sentiment scores. If the Pearson correlation coefficient (absolute value) is close to 1, it means that there exists a strong correlation. If it is close to 0, it means that there exists a weak or no correlation. If the coefficient is positive, the correlation is positive; if negative, the correlation is negative.",
+      "format": "@correlation_coefficient[r_value] where 'r_value' is a number between -1 and 1, rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Identify and remove any outliers in the \"neg\" sentiment score column using the Z-score method, where Z is defined as (value - mean) / standard deviation. Assume a data point to be an outlier if its Z-score is greater than 3 or less than -3. After removing outliers, calculate the new mean and standard deviation for the \"neg\" sentiment score column.",
+    "answer": "[['mean_neg', '0.07'], ['std_dev_neg', '0.04']]",
+    "data": [
+      "/data/daeval/fb_articles_20180822_20180829_df.csv"
+    ],
+    "metadata": {
+      "original_id": 210,
+      "keywords": [
+        "Outlier Detection",
+        "Summary Statistics"
+      ],
+      "constraints": "Z-score is calculated with its general mathematical formula (value - mean) / standard deviation. Consider a data point as an outlier if its Z-score is greater than 3 or less than -3. Do this for the \"neg\" sentiment score column only.",
+      "format": "@mean_neg[mean]\\n@std_dev_neg[std_dev] where \"mean\" and \"std_dev\" are floating-point numbers rounded to two decimal places. Additionally, \"mean\" and \"std_dev\" should be greater than 0 and less than 1 as they mimic sentiment scores.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the abs_diffsel column.",
+    "answer": "[['std_dev', '1.50'], ['mean', '4.61']]",
+    "data": [
+      "/data/daeval/ferret-Pitt-2-preinf-lib2-100_sitediffsel.csv"
+    ],
+    "metadata": {
+      "original_id": 216,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "{\nThe mean and standard deviation should be calculated directly from the 'abs_diffsel' column.\nDo not remove any outliers or modify the data prior to calculation.\nThe mean and standard deviation should be computed directly from all available data points.\n}",
+      "format": "{\n@mean[mean_value]\n@std_dev[std_dev_value]\nwhere \"mean_value\" is a positive float number, rounded to two decimal places.\nwhere \"std_dev_value\" is a positive float number, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Find the site identifier(s) with the highest positive_diffsel value.",
+    "answer": "[['site_identifier', '57']]",
+    "data": [
+      "/data/daeval/ferret-Pitt-2-preinf-lib2-100_sitediffsel.csv"
+    ],
+    "metadata": {
+      "original_id": 217,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "{\nExtract the site identifier corresponding to the highest positive_diffsel value.\nIn the case multiple sites have the same highest positive_diffsel value, list all site identifiers.\nAssume the 'positive_diffsel' column contains only unique values unless specified otherwise.}",
+      "format": "{\n@site_identifier[site_identifier]\nwhere \"site_identifier\" is a string from the 'site' column. If multiple site identifiers should be listed, return them as a single string separated by commas.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the correlation coefficient between the positive_diffsel and negative_diffsel columns.",
+    "answer": "[['correlation_coefficient', '0.08']]",
+    "data": [
+      "/data/daeval/ferret-Pitt-2-preinf-lib2-100_sitediffsel.csv"
+    ],
+    "metadata": {
+      "original_id": 218,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "{\nCalculate the Pearson correlation coefficient (r) to assess the strength of the linear relationship between positive_diffsel and negative_diffsel. \nDo not remove any outliers or modify the data prior to computation. \nUse all available data points for the computation of the correlation coefficient.}",
+      "format": "{\n@correlation_coefficient[r_value]\nwhere \"r_value\" is a float number between -1 and 1, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify the site(s) with outliers in the abs_diffsel column using the interquartile range (IQR) method. An outlier is defined as a value that is below Q1 - 1.5*IQR or above Q3 + 1.5*IQR. Provide the site identifier(s) and the corresponding absolute difference in selection values for the outliers.",
+    "answer": "[['outlier_values', '9.03,9.00'], ['site_identifiers', '(HA2)121,326']]",
+    "data": [
+      "/data/daeval/ferret-Pitt-2-preinf-lib2-100_sitediffsel.csv"
+    ],
+    "metadata": {
+      "original_id": 219,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Use the interquartile range (IQR) method for outlier detection. Calculate the IQR as the difference between the first quartile (Q1) and the third quartile (Q3) of the abs_diffsel column. Consider a value as an outlier if it is below Q1 - 1.5*IQR or above Q3 + 1.5*IQR.",
+      "format": "@site_identifiers[site_id1,site_id2,...] @outlier_values[value1,value2,...], where \"site_id1\", \"site_id2\", ... are strings representing the identifiers of the sites with detected outliers and \"value1\", \"value2\", ... are the corresponding absolute difference in selection values for the outliers, each rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Utilize machine learning techniques to classify the sites into two categories based on their positive_diffsel values, with values less than or equal to the mean defined as 'low' selection, and the rest as 'high'. Split the dataset into training and testing sets with an 80:20 ratio using a specified random state of 42. Train a logistic regression model on the training set, and evaluate its performance on the testing set using accuracy as a metric.",
+    "answer": "[['accuracy_score', '0.98']]",
+    "data": [
+      "/data/daeval/ferret-Pitt-2-preinf-lib2-100_sitediffsel.csv"
+    ],
+    "metadata": {
+      "original_id": 224,
+      "keywords": [
+        "Machine Learning",
+        "Distribution Analysis"
+      ],
+      "constraints": "Use scikit-learn's Logistic Regression for your classifier model, 'liblinear' solver for the Logistic Regression, and a random state of 42 when splitting the data and building the model. All numeric values should be rounded to two decimal places.",
+      "format": "@accuracy_score[float between 0 and 1, inclusive, rounded to two decimal places].",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the average duration of a budget year for all departments?",
+    "answer": "[['average_duration', '364']]",
+    "data": [
+      "/data/daeval/city_departments_in_current_budget.csv"
+    ],
+    "metadata": {
+      "original_id": 234,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the duration of each department’s budget year in days, by subtracting the budget_year_start from budget_year_end. Afterwards, calculate the mean of these durations using a built-in Python function.",
+      "format": "@average_duration[days] where \"days\" is a whole number representing the average number of days of budget years across all departments, rounded to the nearest whole number.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the mean batting average of the players in the dataset?",
+    "answer": "[['mean_batting_average', '0.258']]",
+    "data": [
+      "/data/daeval/baseball_data.csv"
+    ],
+    "metadata": {
+      "original_id": 243,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Consider only the players who have a recorded batting average. Do not include the one player with a missing batting average into your calculation. Report your answer rounded off to three decimal places.",
+      "format": "@mean_batting_average[mean_batting_average] where \"mean_batting_average\" is a float between 0 and 1, rounded to three decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the average number of runs scored by players who are eligible for free agency compared to players who are not eligible for free agency?",
+    "answer": "[['average_runs_by_not_eligible_for_free_agency', '39.63'], ['average_runs_by_eligible_for_free_agency', '57.41']]",
+    "data": [
+      "/data/daeval/baseball_data.csv"
+    ],
+    "metadata": {
+      "original_id": 247,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Use the 'groupby' function on the 'indicator_of_free_agency_eligibility' column to group the data by whether a player is eligible for free agency or not. Then use the 'mean' function on the 'number_of_runs' column to find the average number of runs scored by these two groups of players.",
+      "format": "@average_runs_by_eligible_for_free_agency[average_runs]\\n@average_runs_by_not_eligible_for_free_agency[average_runs] where \"average_runs\" is a float rounded to two decimal places specifying the average number of runs scored by players who are eligible for free agency and players who are not eligible for free agency, respectively.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new feature called \"batting_average_minus_on_base_percentage\" which represents the difference between a player's batting average and their on-base percentage. Calculate the mean and standard deviation of this new feature.",
+    "answer": "[['mean', '-0.07'], ['std_dev', '0.03']]",
+    "data": [
+      "/data/daeval/baseball_data.csv"
+    ],
+    "metadata": {
+      "original_id": 250,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "To calculate the new feature, subtract each player's on-base percentage from their batting average. Ignore the missing values and areas with null values for batting average or on-base percentage. Calculate both the mean and standard deviation using these new feature values.",
+      "format": "@mean[mean_value] @std_dev[std_dev_value] where \"mean_value\" is the mean of the new feature, and \"std_dev_value\" is the standard deviation of the new feature. Both should be rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Determine which country's gross domestic product per capita in the year 1992 had the highest skewness among all countries in the dataset.",
+    "answer": "[['highest_skewness_country', 'Afghanistan']]",
+    "data": [
+      "/data/daeval/gapminder_gdp_asia.csv"
+    ],
+    "metadata": {
+      "original_id": 252,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Use Python's SciPy library to calculate the skewness of each country's gross domestic product per capita in 1992. Skewness should be calculated with Fisher’s definition, i.e. the one that's adjusted for the normal distribution.",
+      "format": "@highest_skewness_country[country_name] where \"country_name\" is a string",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify any outliers in the gross domestic product per capita data for the year 1982 for all countries. Define an outlier as any data point that falls more than 1.5 times the interquartile range (IQR) below the first quartile or above the third quartile. Report the country or countries which their gdpPercap_1982 values are identified as outliers.",
+    "answer": "[['outlier_countries', 'Kuwait, Saudi Arabia']]",
+    "data": [
+      "/data/daeval/gapminder_gdp_asia.csv"
+    ],
+    "metadata": {
+      "original_id": 254,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Use the interquartile range (IQR) rule for outlier detection: a data point is considered an outlier if it falls more than 1.5*IQR below the first quartile (Q1) or above the third quartile (Q3). Don't use any other outlier detection methods or parameters.",
+      "format": "@outlier_countries[list_of_strings] where each string in list_of_strings is the name of a country that is an outlier according to the IQR rule.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the gross domestic product per capita in the year 2007 for all countries in the dataset. Round your answers to 2 decimal places.",
+    "answer": "[['standard_deviation_gdp2007', '14154.94'], ['mean_gdp2007', '12473.03']]",
+    "data": [
+      "/data/daeval/gapminder_gdp_asia.csv"
+    ],
+    "metadata": {
+      "original_id": 255,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Perform arithmetic mean and standard deviation calculations on the 'gdpPercap_2007' column of the dataset. Round your answer to two decimal places. Do not use modes, medians, or any other form of average.",
+      "format": "@mean_gdp2007[float], @standard_deviation_gdp2007[float] where each float is a positive number rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there any correlation between the TOTUSJH and TOTUSJZ columns in the dataset?",
+    "answer": "[['correlation_type', 'Positive Correlation'], ['correlation_coefficient', '0.99'], ['p_value', '0.000']]",
+    "data": [
+      "/data/daeval/3901.csv"
+    ],
+    "metadata": {
+      "original_id": 269,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient between the TOTUSJH and TOTUSJZ columns. Use a two-tailed test with a significance level of 0.05 to determine the statistical significance. If the p-value is less than 0.05, report the relationship as either \"Positive Correlation\", \"Negative Correlation\" or \"No Correlation\", based on the sign and magnitude of the correlation coefficient. If the p-value is greater than or equal to 0.05, report \"No Significant Correlation\".",
+      "format": "@correlation_type[A string that should be either \"Positive Correlation\", \"Negative Correlation\", \"No Correlation\", or \"No Significant Correlation\"] @correlation_coefficient[The Pearson correlation coefficient, rounded to two decimal places] @p_value[The p-value of the correlation test, rounded to three decimal places]",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new feature named \"TOTUSJZ_TOTUSJH_RATIO\" by dividing the TOTUSJZ column by the TOTUSJH column. Calculate the mean and standard deviation of this new feature.",
+    "answer": "[['mean_ratio', '22756785531.29'], ['stddev_ratio', '969133356.79']]",
+    "data": [
+      "/data/daeval/3901.csv"
+    ],
+    "metadata": {
+      "original_id": 272,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Add a small constant (1e-10) to the denominator (TOTUSJH column) to avoid dividing by zero.",
+      "format": "Return 2 values: @mean_ratio[Mean of the TOTUSJZ_TOTUSJH_RATIO column, rounded to two decimal places], @stddev_ratio[Standard deviation of the TOTUSJZ_TOTUSJH_RATIO column, rounded to two decimal places].",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform a correlation analysis between the MEANGAM and MEANGBT columns. Additionally, for the correlated variables, identify any outliers in the MEANGAM column using the Z-score method and a threshold of 3 for the absolute Z-score.",
+    "answer": "[['correlation_coefficient', '0.922'], ['outlier_count', '0'], ['outlier_list', '']]",
+    "data": [
+      "/data/daeval/3901.csv"
+    ],
+    "metadata": {
+      "original_id": 273,
+      "keywords": [
+        "Correlation Analysis",
+        "Outlier Detection"
+      ],
+      "constraints": "1. Use the Pearson correlation coefficient to assess the correlation between MEANGAM and MEANGBT columns.\n2. Define outliers as those data points in the MEANGAM column where the absolute Z-score exceeds 3.",
+      "format": "1. @correlation_coefficient[correlation_value] where \"correlation_value\" should be a number between -1 and 1, rounded to 3 decimal places.\n2. @outlier_count[outlier_total] where \"outlier_total\" denotes the total number of identified outliers in the MEANGAM column.\n3. @outlier_list[outlier_values_list] where \"outlier_values_list\" is a list of the identified outlier values in MEANGAM column, rounded to 2 decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there any correlation between the MedInd and LarInd columns in the given dataset? If yes, what is the correlation coefficient?",
+    "answer": "[['correlation_coefficient', '0.7366']]",
+    "data": [
+      "/data/daeval/veracruz 2016.csv"
+    ],
+    "metadata": {
+      "original_id": 277,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson's correlation coefficient (r), a statistical measure that calculates the strength of the relationship between the relative movements of two variables, between the MedInd and LarInd columns. The Pearson's correlation coefficient should be rounded to 4 decimal places.",
+      "format": "@correlation_coefficient[correlation_value] where \"correlation_value\" is a signed numeric value between -1 and 1, rounded to 4 decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Are there any outliers in the Agri column of the dataset? If yes, how would you detect them using Z-scores?",
+    "answer": "[['outliers_count', '0']]",
+    "data": [
+      "/data/daeval/veracruz 2016.csv"
+    ],
+    "metadata": {
+      "original_id": 278,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Calculate the Z-scores for the Agri column values. Any data point that has a Z-score greater than 3 or less than -3 should be considered as an outlier.",
+      "format": "@outliers_count[outliers_value] where \"outliers_value\" is a non-negative integer representing the count of outliers detected based on the Z-score calculation.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform correlation analysis on the given dataset to determine if there is any relationship between the Agri and Residential columns. Additionally, explore the distribution of the Agri column and identify any outliers using z-score as the outlier detection method. Treat any value which has z-score above 3 as an outlier.",
+    "answer": "[['number_of_outliers', '0'], ['correlation_coefficient', '-0.17']]",
+    "data": [
+      "/data/daeval/veracruz 2016.csv"
+    ],
+    "metadata": {
+      "original_id": 282,
+      "keywords": [
+        "Correlation Analysis",
+        "Distribution Analysis",
+        "Outlier Detection"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient to assess the linear relationship between Agri and Residential columns. Treat a value as an outlier if the z-score is above 3. Do not consider any other method for outlier detection. Use scipy's pearsonr method for correlation calculation.",
+      "format": "@correlation_coefficient[r_value]\\n@number_of_outliers[number_of_outliers]\\n where \"r_value\" is a number between -1 and 1, rounded to two decimal places. \"number_of_outliers\" is an integer representing the number of outliers found in the Agri column.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform distribution analysis on the age and fare variables separately, then calculate and compare the skewness and kurtosis values for each. Additionally, count the number of values within one standard deviation from the mean, for both age and fare.",
+    "answer": "[['fare_kurtosis', '33.20'], ['age_values_within_one_stdev', '516'], ['fare_skewness', '4.78'], ['fare_values_within_one_stdev', '818'], ['age_skewness', '0.39'], ['age_kurtosis', '0.17']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 309,
+      "keywords": [
+        "Distribution Analysis",
+        "Summary Statistics"
+      ],
+      "constraints": "Use Python's scipy library for your analyses. Calculate skewness and kurtosis values using the scipy.stats.skew() and scipy.stats.kurtosis() functions, respectively, with the default settings. Count the number of values within one standard deviation from the mean by applying standard formula: mean - stdev <= x <= mean + stdev.",
+      "format": "@age_skewness[skewness_value]   \n@age_kurtosis[kurtosis_value] \n@age_values_within_one_stdev[number]\n@fare_skewness[skewness_value] \n@fare_kurtosis[kurtosis_value] \n@fare_values_within_one_stdev[number]\nwhere \"skewness_value\", \"kurtosis_value\" are floats with two decimals, \"number\" is a positive integer.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the mean of the EVENTMSGTYPE column?",
+    "answer": "[['mean_eventmsgtype', '3.98']]",
+    "data": [
+      "/data/daeval/0020200722.csv"
+    ],
+    "metadata": {
+      "original_id": 320,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "To calculate the arithmetic mean of all the observations in the EVENTMSGTYPE column. Ignore any missing values or outliers when calculating the mean.",
+      "format": "@mean_eventmsgtype[mean], rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Are there any missing values in the dataset? If so, which column has the highest number of missing values?",
+    "answer": "[['max_missing_values', 'NEUTRALDESCRIPTION']]",
+    "data": [
+      "/data/daeval/0020200722.csv"
+    ],
+    "metadata": {
+      "original_id": 324,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Columns with missing values: HOMEDESCRIPTION, NEUTRALDESCRIPTION, VISITORDESCRIPTION, SCORE, SCOREMARGIN.",
+      "format": "@max_missing_values[column_name] The output should be a string containing the name of the column with the highest number of missing values.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new feature named \"event_hour\" that represents the hour of the day (in 24-hour format) when each event occurred. Perform a correlation analysis to determine if there is a relationship between the event hour and the event type (EVENTMSGTYPE).",
+    "answer": "[['relationship', 'none'], ['correlation_coefficient', '0.08'], ['p_value', '0.0749']]",
+    "data": [
+      "/data/daeval/0020200722.csv"
+    ],
+    "metadata": {
+      "original_id": 326,
+      "keywords": [
+        "Feature Engineering",
+        "Correlation Analysis"
+      ],
+      "constraints": "{\nExtract the hour from the WCTIMESTRING column using string manipulation functions.\nCalculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between event_hour and EVENTMSGTYPE.\nAssess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05.\nReport the p-value associated with the correlation test.\nConsider the relationship to be positive if the p-value is less than 0.05 and the correlation coefficient is greater than or equal to 0.5.\nConsider the relationship to be negative if the p-value is less than 0.05 and the correlation coefficient is less than or equal to -0.5.\nIf the p-value is greater than or equal to 0.05, report that there is no significant correlation.\n}",
+      "format": "{\n@correlation_coefficient[r_value]\n@p_value[p_value]\n@relationship[relationship]\nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to four decimal places.\nwhere \"relationship\" is a string that can either be \"positive\", \"negative\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Is the distribution of the median sold price per square foot skewed? If yes, is it positively or negatively skewed?",
+    "answer": "[['skewness_type', 'Positive Skewness'], ['skewness_coefficient', '0.08']]",
+    "data": [
+      "/data/daeval/Zip_MedianSoldPricePerSqft_AllHomes.csv"
+    ],
+    "metadata": {
+      "original_id": 337,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "For determining the skewness, consider only non-null values. Use the Fisher-Pearson standardized moment coefficient for assessing the skewness. A skewness value > 0 means that there is more weight in the right tail of the distribution (positive skewness). A skewness value < 0 means that there is more weight in the left tail of the distribution (negative skewness). Calculate the skewness up to two decimal places.",
+      "format": "@skewness_coefficient[skewness_coefficient]\n@skewness_type[skewness_type]\nwhere \"skewness_coefficient\" is a number greater than or equal to -1 and less than or equal to 1, rounded to two decimal places.\nwhere \"skewness_type\" is a string that could be either \"Positive Skewness\", \"Negative Skewness\", or \"No Skewness\".",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Is there a correlation between the size rank of a region and the median sold price per square foot? If yes, is it a positive or negative correlation?",
+    "answer": "[['correlation_type', 'Positive Correlation'], ['correlation_coefficient', '0.178']]",
+    "data": [
+      "/data/daeval/Zip_MedianSoldPricePerSqft_AllHomes.csv"
+    ],
+    "metadata": {
+      "original_id": 338,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation between the variables size rank and median sold price per square foot, considering only non-null values. A correlation value > 0 indicates a positive correlation, while a value < 0 indicates a negative correlation. A correlation value close to zero indicates no correlation. Calculate the correlation coefficient up to three decimal places.",
+      "format": "@correlation_coefficient[correlation_coefficient]\n@correlation_type[correlation_type]\nwhere \"correlation_coefficient\" is a number between -1 and 1, rounded to three decimal places.\nwhere \"correlation_type\" is a string that could be either \"Positive Correlation\", \"Negative Correlation\", or \"No Correlation\".",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean age of the passengers.",
+    "answer": "[['mean_age', '1.10']]",
+    "data": [
+      "/data/daeval/test_x.csv"
+    ],
+    "metadata": {
+      "original_id": 349,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "The mean should be calculated on the full 'Age' column with no filtering. Use the default parameter values for pandas.DataFrame.mean method; in particular, ignore NA/null values and compute the arithmetic mean along the specified axis.",
+      "format": "@mean_age[mean_age] where \"mean_age\" is a floating point number representing the calculated mean age, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Check if the Fare column follows a normal distribution.",
+    "answer": "[['is_normal', 'False']]",
+    "data": [
+      "/data/daeval/test_x.csv"
+    ],
+    "metadata": {
+      "original_id": 350,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Perform a Shapiro-Wilk test for normality on the 'Fare' column. Use a significance level (alpha) of 0.05 to determine if the 'Fare' column is normally distributed. The 'Fare' column is considered to be normally distributed if the p-value from the Shapiro-Wilk test is greater than 0.05.",
+      "format": "@is_normal[is_normal] where \"is_normal\" is a boolean value: True means the 'Fare' column follows a normal distribution; False means it does not follow a normal distribution.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Determine the correlation coefficient between Age and Fare.",
+    "answer": "[['correlation_coefficient', '0.32']]",
+    "data": [
+      "/data/daeval/test_x.csv"
+    ],
+    "metadata": {
+      "original_id": 351,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient between 'Age' and 'Fare'. Use pandas.DataFrame.corr method with the 'pearson' method. Ignore NA/null values.",
+      "format": "@correlation_coefficient[correlation_coefficient] where \"correlation_coefficient\" is a floating point number representing the calculated correlation coefficient, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new feature \"FamilySize\" by summing the IsAlone column with the number of siblings/spouses and number of parents/children on board.",
+    "answer": "[['average_familysize', '2.6']]",
+    "data": [
+      "/data/daeval/test_x.csv"
+    ],
+    "metadata": {
+      "original_id": 354,
+      "keywords": [
+        "Feature Engineering"
+      ],
+      "constraints": "Assume each passenger has at least one sibling/spouse and one parent/child on board, therefore, FamilySize = IsAlone + 1 (for sibling or spouse) + 1 (for parent or child).\nCompute the average FamilySize and round to one decimal place.",
+      "format": "@average_familysize[avg_family_size]\nwhere \"avg_family_size\" is a number rounded to one decimal place.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform a linear regression analysis to predict fare based on age and passenger class.",
+    "answer": "[['relationship_age', 'not significant'], ['relationship_pclass', 'significant'], ['coef_pclass', '-0.98'], ['coef_age', '-0.05']]",
+    "data": [
+      "/data/daeval/test_x.csv"
+    ],
+    "metadata": {
+      "original_id": 355,
+      "keywords": [
+        "Correlation Analysis",
+        "Machine Learning"
+      ],
+      "constraints": "{\nUse the simple linear regression model where Fare is the dependent variable and Age and Pclass are the independent variables.\nConsider the relationship to be significant if the p-value is less than 0.05 for both variables (Age and Pclass).\nIf the p-value is greater than or equal to 0.05 for either variable, report that there is no significant relationship.\n}",
+      "format": "{\n@coef_age[coef_age]\n@coef_pclass[coef_pclass]\n@relationship_age[relationship_age]\n@relationship_pclass[relationship_pclass]\nwhere \"coef_age\" and \"coef_pclass\" are the regression coefficients for the variables Age and Pclass respectively, rounded to two decimal places.\nwhere \"relationship_age\" and \"relationship_pclass\" are strings that can either be \"significant\" or \"not significant\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Check if the distribution of wind speed in the weather dataset is skewed.",
+    "answer": "[['skewness_value', '0.83'], ['skewness_type', 'positive']]",
+    "data": [
+      "/data/daeval/weather_train.csv"
+    ],
+    "metadata": {
+      "original_id": 359,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "For missing values in the \"wind speed\" column, use the 'dropna' method to remove these data points before calculations.\nDetermine the skewness using Pearson's First Coefficient of Skewness. \nReport whether the distribution is positively skewed, negatively skewed, or symmetric based on the obtained skewness value. \nAssume the distribution to be positively skewed if skewness value is > 0, negatively skewed if skewness is < 0, and symmetric if skewness is 0.",
+      "format": "@skewness_value[skew_value]\n@skewness_type[type_value]\nwhere \"skew_value\" is a float number rounded to 2 decimal places.\nwhere \"type_value\" is a string that can be either \"positive\", \"negative\", or \"symmetric\" based on the conditions specified in the constraints.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Determine the correlation coefficient between temperature and humidity in the weather dataset.",
+    "answer": "[['correlation_strength', 'moderate'], ['correlation_coefficient', '-0.64']]",
+    "data": [
+      "/data/daeval/weather_train.csv"
+    ],
+    "metadata": {
+      "original_id": 360,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "For missing values in either the \"temperature\" or \"humidity\" columns, use the 'dropna' method to remove these datapoints before calculations.\nCalculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between temperature and humidity.\nConsider a correlation to be strong if the absolute value of r is greater than or equal to 0.7, moderate if it is between 0.3 and 0.7, and weak if it is less than 0.3.",
+      "format": "@correlation_coefficient[r_value]\n@correlation_strength[strength_value]\nwhere \"r_value\" is a float number between -1 and 1, rounded to 2 decimal places.\nwhere \"strength_value\" is a string that can be either \"strong\", \"moderate\", or \"weak\" based on the conditions specified in the constraints.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify and remove outliers in the wind speed column of the weather dataset. Use the Z-score method to detect outliers with a threshold of 3 and create a new dataframe without the outlier values.",
+    "answer": "[['outlier_count', '0']]",
+    "data": [
+      "/data/daeval/weather_train.csv"
+    ],
+    "metadata": {
+      "original_id": 361,
+      "keywords": [
+        "Outlier Detection",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "{\nUse a Z-score threshold of 3 for outlier identification.\nIf the Z-score of a value is higher than 3 or lower than -3, consider it as an outlier.\nAfter outlier detection, drop these rows and create a new dataframe.\n}",
+      "format": "{\n@outlier_count[integer]\nwhere \"integer\" represents the total count of outliers detected.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Train a machine learning model to predict the amount of sunlight (sun column) based on the temperature, humidity, and wind speed columns. Use a simple linear regression model. Split the dataset into a 70-30 training-testing split, and evaluate the model's performance using the mean squared error.",
+    "answer": "[['mean_squared_error', '1.18']]",
+    "data": [
+      "/data/daeval/weather_train.csv"
+    ],
+    "metadata": {
+      "original_id": 363,
+      "keywords": [
+        "Machine Learning"
+      ],
+      "constraints": "{\nUse a simple linear regression model for training.\nSplit the data into training and testing sets in a 70-30 ratio.\nEvaluate the model using mean squared error (make sure your mean squared error is not negative).\n}",
+      "format": "{\n@mean_squared_error[mse]\nwhere \"mse\" is a number rounded to 2 decimal places representing the mean squared error of the predictions.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Perform a distribution analysis on the \"Trips over the past 24-hours (midnight to 11:59pm)\" column. Determine if the distribution adheres to a normal distribution or it exhibits skewness, heavy tails, or bimodality.",
+    "answer": "[['skewness', '0.1520'], ['kurtosis', '-1.1336'], ['shapiro_w', '0.9543'], ['p_value', '0.0027']]",
+    "data": [
+      "/data/daeval/2014_q4.csv"
+    ],
+    "metadata": {
+      "original_id": 375,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Use Python's scipy library to perform a Shapiro-Wilk test to check for normality. The Shapiro-Wilk test tests the null hypothesis that the data was drawn from a normal distribution. For skewness and kurtosis use Python's scipy library. Results for skewness and kurtosis are defined as 'heavy' if they fall outside the range of -0.5 to 0.5.",
+      "format": "@shapiro_w[test_statistic], @p_value[p_value], @skewness[skewness_value], @kurtosis[kurtosis_value] where each answer is a floating number to four decimal places. If p-value is less than 0.05, the distribution is not normal.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between the fare paid by the passenger and their age? If so, is it a linear or nonlinear correlation?",
+    "answer": "[['correlation_coefficient', '0.10'], ['relationship_type', 'nonlinear'], ['p_value', '0.0102']]",
+    "data": [
+      "/data/daeval/titanic_train.csv"
+    ],
+    "metadata": {
+      "original_id": 408,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between 'Fare' and 'Age'.\nAssess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05.\nReport the p-value associated with the correlation test.\nConsider the relationship to be linear if the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5.\nConsider the relationship to be nonlinear if the p-value is less than 0.05 and the absolute value of r is less than 0.5.\nIf the p-value is greater than or equal to 0.05, report that there is no significant correlation.\nIgnore the null values in 'Age' while calculating the correlation.",
+      "format": "@correlation_coefficient[r_value]\n@p_value[p_value]\n@relationship_type[relationship_type] \nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to four decimal places.\nwhere \"relationship_type\" is a string that can either be \"linear\", \"nonlinear\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "How many missing values are there in the \"Cabin\" column?",
+    "answer": "[['missing_values', '687']]",
+    "data": [
+      "/data/daeval/titanic_train.csv"
+    ],
+    "metadata": {
+      "original_id": 409,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Count the number of missing values in the 'Cabin' column in the dataset. Treat null values as missing values.",
+      "format": "@missing_values[missing_values] where \"missing_values\" is an integer.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the distribution of ages among the male passengers who did not survive? Is it significantly different from the distribution of ages among the female passengers who did not survive?",
+    "answer": "[['is_significantly_different', 'True']]",
+    "data": [
+      "/data/daeval/titanic_train.csv"
+    ],
+    "metadata": {
+      "original_id": 410,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Calculating the distribution of ages should use a Kernel Density Estimation (KDE) method. Perform a two-sample Kolmogorov-Smirnov test to compare the distributions. Use a significance level (alpha) of 0.05. If the p-value is less than 0.05, conclude the distributions are significantly different. If the p-value is greater than or equal to 0.05, conclude the distributions are not significantly different.",
+      "format": "@is_significantly_different[answer] where \"answer\" is a boolean indicating the result of the test. For example, if the distributions are significantly different, the answer should be \"True\". If not, the answer should be \"False\".",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new feature called \"FamilySize\" by adding the \"SibSp\" and \"Parch\" columns together. What is the mean \"FamilySize\" for passengers who survived versus passengers who did not survive?",
+    "answer": "[['mean_familysize_survived', '0.94'], ['mean_familysize_did_not_survive', '0.88']]",
+    "data": [
+      "/data/daeval/titanic_train.csv"
+    ],
+    "metadata": {
+      "original_id": 412,
+      "keywords": [
+        "Feature Engineering"
+      ],
+      "constraints": "Calculate the mean of \"FamilySize\" separately for the passengers who survived and the passengers who did not survive. \"FamilySize\" should be an integer value. The mean should be calculated rounding up to two decimal places.",
+      "format": "@mean_familysize_survived[answer1] @mean_familysize_did_not_survive[answer2] where \"answer1\" is the mean \"FamilySize\" for passengers who survived and \"answer2\" is the mean \"FamilySize\" for passengers who did not survive. Both results should be rounded to 2 decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between the ticket class (Pclass) and the fare paid by the passengers that embarked from Cherbourg (Embarked = 'C')?",
+    "answer": "[['correlation_coefficient', '-0.53'], ['relationship_significance', 'significant'], ['p_value', '0.0000']]",
+    "data": [
+      "/data/daeval/titanic_train.csv"
+    ],
+    "metadata": {
+      "original_id": 413,
+      "keywords": [
+        "Correlation Analysis",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between Pclass and Fare for passengers who embarked from Cherbourg.\nAssess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.01.\nReport the p-value associated with the correlation test.\nConsider the relationship to be significant if the p-value is less than 0.01.\nIf the p-value is greater than or equal to 0.01, report that there is no significant correlation.",
+      "format": "@correlation_coefficient[r_value]\n@p_value[p_value]\n@relationship_significance[significance]\nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to four decimal places.\nwhere \"significance\" is a string that can either be \"significant\" or \"not significant\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the average age of passengers in each ticket class (Pclass)?",
+    "answer": "[['first_class_average_age', '38.23'], ['second_class_average_age', '29.88'], ['third_class_average_age', '25.14']]",
+    "data": [
+      "/data/daeval/titanic_train.csv"
+    ],
+    "metadata": {
+      "original_id": 414,
+      "keywords": [
+        "Summary Statistics",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Calculate the average (mean) age of the passengers in each class separately (Pclass = 1, Pclass = 2, Pclass = 3).\nIgnore the rows with missing age.\nRound the average age to two decimal places.",
+      "format": "@first_class_average_age[average_age_1]\n@second_class_average_age[average_age_2]\n@third_class_average_age[average_age_3]\nwhere \"average_age_1\" is the average age of the first-class passengers, rounded to two decimal places.\nwhere \"average_age_2\" is the average age of the second-class passengers, rounded to two decimal places.\nwhere \"average_age_3\" is the average age of the third-class passengers, rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the distribution of fare paid by male passengers who survived? Are there any significant differences in the fare paid by male passengers who survived compared to male passengers who did not survive?",
+    "answer": "[['survived_fare_mean', '40.82'], ['not_survived_fare_std', '32.41'], ['fare_difference_significance', 'significant'], ['not_survived_fare_mean', '21.96'], ['survived_fare_std', '71.36']]",
+    "data": [
+      "/data/daeval/titanic_train.csv"
+    ],
+    "metadata": {
+      "original_id": 415,
+      "keywords": [
+        "Distribution Analysis",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Calculate the mean and standard deviation of fares paid by male passengers who survived and did not survive separately.\nConduct an independent sample t-test to compare the means of these two groups.\nUse a significance level of 0.05.\nReport whether there is a significant difference in the means based on the p-value of the test.",
+      "format": "@survived_fare_mean[mean_survived]\n@survived_fare_std[std_survived]\n@not_survived_fare_mean[mean_not_survived]\n@not_survived_fare_std[std_not_survived]\n@fare_difference_significance[significance]\nwhere \"mean_survived\" is the mean fare of male passengers who survived, rounded to two decimal places.\nwhere \"std_survived\" is the standard deviation of fare of male passengers who survived, rounded to two decimal places.\nwhere \"mean_not_survived\" is the mean fare of male passengers who did not survive, rounded to two decimal places.\nwhere \"std_not_survived\" is the standard deviation of fare of male passengers who did not survive, rounded to two decimal places.\nwhere \"significance\" is a string that can either be \"significant\" or \"not significant\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Is there a significant difference in the mean opening prices between weekdays and weekends? Provide statistical evidence to support your answer.",
+    "answer": "[['weekday_mean_price', '37.30'], ['weekend_mean_price', '38.49'], ['p_value', '0.8463'], ['significance', 'No']]",
+    "data": [
+      "/data/daeval/bitconnect_price.csv"
+    ],
+    "metadata": {
+      "original_id": 419,
+      "keywords": [
+        "Summary Statistics",
+        "Distribution Analysis"
+      ],
+      "constraints": "Calculate the mean opening prices separately for weekdays (Monday to Friday) and weekends (Saturday and Sunday). Conduct a two-sample t-test to check if there is a statistically significant difference between these two means. Use a significance level (alpha) of 0.05. If the p-value is less than 0.05, conclude that there is a significant difference. If the p-value is greater than or equal to 0.05, conclude that there is no significant difference.",
+      "format": "@weekday_mean_price[weekday_mean_open_price] @weekend_mean_price[weekend_mean_open_price] @p_value[p_value] @significance[significant_or_not] where \"weekday_mean_open_price\" and \"weekend_mean_open_price\" are numbers rounded to two decimal places. \"p_value\" is a number between 0 and 1, rounded to four decimal places. \"significant_or_not\" is a string that can either be 'Yes' or 'No' depending on whether the p-value is less than 0.05.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Perform feature engineering on the given dataset to create a new feature 'Volatility' that is calculated using the formula: Volatility = (High Price - Low Price) / Open Price. What is the Pearson correlation coefficient between Volatility and trading volume? Interpret the result.",
+    "answer": "[['relationship_type', 'none'], ['correlation_coefficient', '-0.09']]",
+    "data": [
+      "/data/daeval/bitconnect_price.csv"
+    ],
+    "metadata": {
+      "original_id": 423,
+      "keywords": [
+        "Feature Engineering",
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between the new feature 'Volatility' and trading volume. Consider the relationship to be positive if the r value is greater than or equal to 0.5. Consider the relationship to be negative if the r value is less than or equal to -0.5. Otherwise, report that there is no significant correlation.",
+      "format": "@correlation_coefficient[correlation_coefficient], @relationship_type[type] where \"correlation_coefficient\" is a number between -1 and 1, rounded to two decimal places. \"type\" is a string that can be \"positive\", \"negative\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. How many missing values are there in the \"max_sust_wind\" column?",
+    "answer": "[['missing_values_count', '24']]",
+    "data": [
+      "/data/daeval/cost_data_with_errors.csv"
+    ],
+    "metadata": {
+      "original_id": 425,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Count the number of null values only, do not include non-null values that might be rendered as errors or irrelevant data.",
+      "format": "@missing_values_count[number] where \"number\" is an integer representing the count of the missing values in the \"max_sust_wind\" column.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. What is the maximum sustained wind speed recorded during the storm with the highest maximum storm category?",
+    "answer": "[['max_wind_speed', '156.42']]",
+    "data": [
+      "/data/daeval/cost_data_with_errors.csv"
+    ],
+    "metadata": {
+      "original_id": 426,
+      "keywords": [
+        "Summary Statistics",
+        "Correlation Analysis"
+      ],
+      "constraints": "Firstly, identify the storm with the highest maximum storm category, neglecting any ties. If there are multiple storms with the same highest maximum storm category, choose the one that appears first in the given dataset. Then find the maximum sustained wind speed corresponding to this particular storm.",
+      "format": "@max_wind_speed[number] where \"number\" is a float with two decimal places indicating the highest wind speed recorded for the storm with the highest maximum storm category.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. How many storms have null values in the \"min_p\" column?",
+    "answer": "[['null_entries_count', '101']]",
+    "data": [
+      "/data/daeval/cost_data_with_errors.csv"
+    ],
+    "metadata": {
+      "original_id": 427,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Count the number of entries which have the null value in the \"min_p\" column. Only the null values should be counted, and not any irrelevant or erroneous data that might be present.",
+      "format": "@null_entries_count[number] where \"number\" is an integer indicating the count of null entries in the \"min_p\" column.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Is there a correlation between the maximum storm category achieved by a storm and the recorded damage in USD? If so, what is the strength and direction of the correlation?",
+    "answer": "[['correlation_coefficient', '0.19'], ['relationship_type', 'nonlinear'], ['p_value', '0.0000']]",
+    "data": [
+      "/data/daeval/cost_data_with_errors.csv"
+    ],
+    "metadata": {
+      "original_id": 429,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "{\nCalculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between maximum storm category and damage in USD.\nUse a two-tailed test with a significance level (alpha) of 0.05 to assess the significance of the correlation. \nReport the p-value associated with the correlation test.\nIf the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5, infer the relationship to be linear.\nIf the p-value is less than 0.05 and the absolute value of r is less than 0.5, infer the relationship to be nonlinear.\nIf the p-value is greater than or equal to 0.05, report that there is no significant correlation.\n}",
+      "format": "{\n@correlation_coefficient[r_value]\n@p_value[p_value]\n@relationship_type[relationship_type]\nwhere \"r_value\" is a number between -1 and 1, rounded to 2 decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to 4 decimal places.\nwhere \"relationship_type\" is a string that can either be \"linear\", \"nonlinear\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Can we predict the maximum sustained wind speed based on the recorded damage in USD and the minimum recorded pressure? What is the performance of the prediction model?",
+    "answer": "[['mean_squared_error', '263.1896']]",
+    "data": [
+      "/data/daeval/cost_data_with_errors.csv"
+    ],
+    "metadata": {
+      "original_id": 432,
+      "keywords": [
+        "Machine Learning",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "{\nUse a linear regression model for prediction.\nUse 80% of the dataset for training and the rest for testing.\nUse Mean Squared Error (MSE) as the evaluation metric to assess the model's performance.\nHandle missing values in the \"max_sust_wind\", \"damage_USD\", and \"min_p\" columns by imputing them with their respective column means.\n}",
+      "format": "{\n@mean_squared_error[mse]\nwhere \"mse\" is the mean squared error of the model, rounded to four decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. What is the mean wind speed in the dataset?",
+    "answer": "[['mean_windspeed', '5.979']]",
+    "data": [
+      "/data/daeval/baro_2015.csv"
+    ],
+    "metadata": {
+      "original_id": 446,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the arithmetic mean of WINDSPEED, excluding any null values. The mean must be calculated to three decimal places.",
+      "format": "@mean_windspeed[mean_windspeed], where \"mean_windspeed\" is a number with a maximum of three decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Are there any outliers in the atmospheric pressure column (BARO)? If yes, how many outliers are there?",
+    "answer": "[['number_of_outliers', '111']]",
+    "data": [
+      "/data/daeval/baro_2015.csv"
+    ],
+    "metadata": {
+      "original_id": 447,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "An outlier is any value that is more than 1.5 times the interquartile range above the third quartile or below the first quartile. Ignore null values.",
+      "format": "@number_of_outliers[number_of_outliers], where \"number_of_outliers\" is an integer representing the total number of outliers detected under the conditions specified in the constraints.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Is there a relationship between wind speed (WINDSPEED) and atmospheric pressure (BARO) for wind direction (DIR) equal to 180 degrees? Calculate the Pearson correlation coefficient for this specific wind direction.",
+    "answer": "[['relationship_type', 'none'], ['p_value', '0.6756'], ['correlation_coefficient', '-0.08']]",
+    "data": [
+      "/data/daeval/baro_2015.csv"
+    ],
+    "metadata": {
+      "original_id": 452,
+      "keywords": [
+        "Correlation Analysis",
+        "Feature Engineering"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between wind speed and atmospheric pressure for wind direction equal to 180 degrees.\nAssess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05.\nReport the p-value associated with the correlation test.\nConsider the relationship to be linear if the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5.\nConsider the relationship to be nonlinear if the p-value is less than 0.05 and the absolute value of r is less than 0.5.\nIf the p-value is greater than or equal to 0.05, report that there is no significant correlation.",
+      "format": "@correlation_coefficient[r_value]\n@p_value[p_value]\n@relationship_type[relationship_type]\nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to four decimal places.\nwhere \"relationship_type\" is a string that can either be \"linear\", \"nonlinear\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Perform data preprocessing on the dataset, which includes removing outliers in the wind speed (WINDSPEED) column using the Z-score method (outliers are values that have a Z-score greater than 3 or lesser than -3) and handling missing values in the atmospheric temperature (AT) column by replacing them with the mean temperature. After preprocessing, calculate the mean wind speed and average atmospheric temperature.",
+    "answer": "[['mean_wind_pre', '5.98'], ['mean_atmos_temp_pre', '52.47'], ['mean_atmos_temp_post', '52.47'], ['mean_wind_post', '5.85']]",
+    "data": [
+      "/data/daeval/baro_2015.csv"
+    ],
+    "metadata": {
+      "original_id": 453,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean and standard deviation of the wind speed (WINDSPEED) column before preprocessing.\nReplace any wind speed value that is more than three standard deviations away from the mean, with the mean wind speed.\nCalculate the mean atmosphere temperature (AT), and fill missing values in the atmospheric temperature (AT) column with this mean.\nCalculate the mean values after preprocessing.",
+      "format": "@mean_wind_pre[mean_wind_pre]\n@mean_atmos_temp_pre[mean_atmos_temp_pre]\n@mean_wind_post[mean_wind_post]\n@mean_atmos_temp_post[mean_atmos_temp_post]\nwhere \"mean_wind_pre\" and \"mean_wind_post\" are the mean wind speed values before and after preprocessing, rounded to two decimal places.\nwhere \"mean_atmos_temp_pre\" and \"mean_atmos_temp_post\" are the mean atmospheric temperature values before and after preprocessing, rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Is the distribution of offender ages normally distributed or skewed?",
+    "answer": "[['distribution_skew', 'skewed_left']]",
+    "data": [
+      "/data/daeval/arrest_expungibility.csv"
+    ],
+    "metadata": {
+      "original_id": 465,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Calculate skewness of the 'Age' column using the skew function from the 'scipy.stats'. A skewness value between -0.5 to +0.5 indicates that the distribution is approximately symmetric, a skewness value greater than +0.5 indicates a distribution skewed to the right and a skewness value less than -0.5 indicates a distribution skewed to the left.",
+      "format": "@distribution_skew[skewness] where \"skewness\" is a string that can be \"symmetric\", \"skewed_right\", or \"skewed_left\" based on the criteria provided in the constraints.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the mean value of the \"Value\" column?",
+    "answer": "[['mean_value', '2.58']]",
+    "data": [
+      "/data/daeval/oecd_education_spending.csv"
+    ],
+    "metadata": {
+      "original_id": 472,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Ignore all the null values in the \"Value\" column.\nRound your final answer to two decimal places.",
+      "format": "@mean_value[number]\nwhere \"number\" is a floating-point number rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between the \"Value\" column and the \"TIME\" column? If yes, what is the correlation coefficient?",
+    "answer": "[['correlation_coefficient', '0.02']]",
+    "data": [
+      "/data/daeval/oecd_education_spending.csv"
+    ],
+    "metadata": {
+      "original_id": 474,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient.\nIgnore all the pairs that either \"Value\" or \"TIME\" is null.\nRound your final answer to two decimal places.",
+      "format": "@correlation_coefficient[number]\nwhere \"number\" is a floating-point number between -1 and 1, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Apply feature engineering techniques to the dataset. Create a new feature by subtracting the mean value of the \"Value\" column from each value in that column. Calculate and report the standard deviation of this new feature.",
+    "answer": "[['standard_deviation', '1.22']]",
+    "data": [
+      "/data/daeval/oecd_education_spending.csv"
+    ],
+    "metadata": {
+      "original_id": 480,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Create a new feature by subtracting the mean value of the \"Value\" column from each value in that column. Calculate the standard deviation of the new feature.",
+      "format": "@standard_deviation[std_value] where \"std_value\" is a positive number rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the mean percentage of graduates in the field of Engineering?",
+    "answer": "[['mean_value', '12.89']]",
+    "data": [
+      "/data/daeval/percent-bachelors-degrees-women-usa.csv"
+    ],
+    "metadata": {
+      "original_id": 490,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean value using all available data points in the field of Engineering. Round the mean value to two decimal places.",
+      "format": "@mean_value[number] where \"number\" is a number between 0 and 100, representing the mean value, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Which field has the highest percentage of graduates in the year 2010?",
+    "answer": "[['fields', 'Health Professions']]",
+    "data": [
+      "/data/daeval/percent-bachelors-degrees-women-usa.csv"
+    ],
+    "metadata": {
+      "original_id": 492,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Compare the last available data points (year 2010) for all fields within the dataset. If fields share the maximum percentage value, return all those fields separated by commas.",
+      "format": "@fields[field_names] where \"field_names\" is string(s) separated by commas, mentioning field(s) with the highest percentage of graduates in the year 2010.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform feature engineering by creating a new feature called \"STEM\" (Science, Technology, Engineering, and Math). It should be the sum of the percentages of graduates in the fields of Computer Science, Engineering, Math and Statistics, and Physical Sciences. Calculate the mean and range (maximum - minimum) of the \"STEM\" feature for the years beyond 2000.",
+    "answer": "[['range_STEM', '17.70'], ['mean_STEM', '125.11']]",
+    "data": [
+      "/data/daeval/percent-bachelors-degrees-women-usa.csv"
+    ],
+    "metadata": {
+      "original_id": 496,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the new feature \"STEM\" as the sum of the percentages of graduates in the fields of Computer Science, Engineering, Math and Statistics, and Physical Sciences.\nCompute the mean and the range (maximum - minimum) of the \"STEM\" feature for the years 2000 and beyond. Round to two decimal places.",
+      "format": "@mean_STEM[mean_value]\n@range_STEM[range_value]\nwhere \"mean_value\" is a floating point number rounded to two decimal places representing the mean of the \"STEM\" feature.\nwhere \"range_value\" is a floating point number rounded to two decimal places representing the range of the \"STEM\" feature.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. What is the average number of reviews per hotel in the dataset?",
+    "answer": "[['average_reviews', '1013.53']]",
+    "data": [
+      "/data/daeval/hotel_data.csv"
+    ],
+    "metadata": {
+      "original_id": 506,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean reviews per hotel from the entire dataset. Round your result to two decimal places.",
+      "format": "@average_reviews[average] where \"average\" is a number rounded to two decimal places, and representing the average number of reviews per hotel.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Are there any hotels in the dataset that have a star rating of 5? If yes, how many hotels have a star rating of 5?",
+    "answer": "[['total_hotels', '46']]",
+    "data": [
+      "/data/daeval/hotel_data.csv"
+    ],
+    "metadata": {
+      "original_id": 507,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Count only hotels that have a star rating exactly equal to 5. This count value should be a non-negative integer.",
+      "format": "@total_hotels[count] where \"count\" is a non-negative integer representing the total number of hotels with a star rating of 5.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Is there a correlation between the number of reviews a hotel has received and its bubble score? If yes, what is the correlation coefficient?",
+    "answer": "[['correlation_coefficient', '0.176']]",
+    "data": [
+      "/data/daeval/hotel_data.csv"
+    ],
+    "metadata": {
+      "original_id": 508,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient between review count and bubble score. Consider the correlation to be significant if its absolute value is greater than 0.5. Round your result to three decimal places.",
+      "format": "@correlation_coefficient[r_value] where \"r_value\" is a number between -1 and 1, rounded to three decimal places, representing the correlation between the review count and the bubble score.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Which hotel brand has the highest average star rating among hotels with at least 100 reviews?",
+    "answer": "[['brand_with_highest_average_star_rating', 'Preferred Hotels & Resorts']]",
+    "data": [
+      "/data/daeval/hotel_data.csv"
+    ],
+    "metadata": {
+      "original_id": 510,
+      "keywords": [
+        "Summary Statistics",
+        "Feature Engineering"
+      ],
+      "constraints": "Only consider hotel brands that have at least 10 hotels in the dataset. Do not include hotels without a brand or without a star rating in the calculation. If there is a tie, return the brand with the largest number of hotels in the dataset. Calculate the average using Arithmetic Mean (Sum of observations / Number of observations).",
+      "format": "@brand_with_highest_average_star_rating[brand_name]\nwhere \"brand_name\" is the name of the hotel brand as a string.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Among the hotels with a star rating, what is the correlation between the number of reviews a hotel has received and its bubble score? Do hotels with higher star ratings tend to have higher bubble scores and more reviews?",
+    "answer": "[['above4_correlation', '-0.28'], ['below3_correlation', '0.15'], ['between3and4_correlation', '0.04']]",
+    "data": [
+      "/data/daeval/hotel_data.csv"
+    ],
+    "metadata": {
+      "original_id": 513,
+      "keywords": [
+        "Correlation Analysis",
+        "Distribution Analysis"
+      ],
+      "constraints": "Calculate the correlation coefficient using the Pearson method. Consider only non-null values. Report the correlation separately for hotels with star ratings below 3, between 3 and 4, and above 4.",
+      "format": "@below3_correlation[correlation_value1], @between3and4_correlation[correlation_value2], @above4_correlation[correlation_value3], where each \"correlation_value\" is a float between -1 and 1, rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. What is the average review count for hotels in each city? Are there any cities where the average review count is significantly higher or lower compared to the overall average review count of all hotels?",
+    "answer": "[['lower_city_count', '4'], ['higher_city_count', '0']]",
+    "data": [
+      "/data/daeval/hotel_data.csv"
+    ],
+    "metadata": {
+      "original_id": 514,
+      "keywords": [
+        "Summary Statistics",
+        "Distribution Analysis"
+      ],
+      "constraints": "Calculate the average review count for each city. Compare the results to the overall average review count. Report cities where the average review count is more or less than twice the overall average.",
+      "format": "@higher_city_count[number_of_higher_cities], @lower_city_count[number_of_lower_cities], where \"number_of_higher_cities\" and \"number_of_lower_cities\" are positive integers representing the number of cities meeting the corresponding criteria.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Check if the fare distribution is skewed.",
+    "answer": "[['skewness_fare', '4.79']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 516,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Calculate the skewness of the fare column using Pearson's moment coefficient of skewness. Ignore null values. Round the final output to 2 decimal places.",
+      "format": "@skewness_fare[skewness_value], where \"skewness_value\" is a float rounded to 2 decimal places, representing the skewness of the fare distribution.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Find the correlation coefficient between the passenger class and the fare.",
+    "answer": "[['correlation_pclass_fare', '-0.55']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 517,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the correlation using the Pearson method. Do not include the rows with null values in either Pclass or Fare in the calculation. Round the final output to 2 decimal places.",
+      "format": "@correlation_pclass_fare[correlation_value], where \"correlation_value\" is a float rounded to 2 decimal places, representing the correlation coefficient between passenger class and fare.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify and remove any outliers in the fare column using the Z-score method.",
+    "answer": "[['number_of_entries_left', '871']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 518,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Calculate the Z-scores for the 'Fare' column values and classify a value as an outlier if its Z-score is greater than 3. After removal of outliers, calculate the number of entries left in the dataset.",
+      "format": "@number_of_entries_left[number] where \"number\" is the total number of entries left in the dataset after removal of outliers.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a new feature called 'FamilySize' by combining the 'SibSp' and 'Parch' columns, which represents the total number of family members a passenger had aboard the Titanic. Then, find the correlation coefficient between 'FamilySize' and 'Survived'.",
+    "answer": "[['correlation_coefficient', '0.02']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 520,
+      "keywords": [
+        "Feature Engineering",
+        "Correlation Analysis"
+      ],
+      "constraints": "Create 'FamilySize' by adding up 'SibSp' and 'Parch', then calculate the Pearson correlation coefficient between 'FamilySize' and 'Survived'.",
+      "format": "@correlation_coefficient[number] where \"number\" is the calculated Pearson correlation coefficient between 'FamilySize' and 'Survived', rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Using machine learning algorithms, build a classification model to predict survival (0 = No, 1 = Yes) based on the passenger's age, gender, and fare. Train a logistic regression model with default parameters provided by the sklearn library. Evaluate the model's performance using accuracy as the evaluation metric.",
+    "answer": "[['classifier_accuracy', '0.78']]",
+    "data": [
+      "/data/daeval/titanic.csv"
+    ],
+    "metadata": {
+      "original_id": 521,
+      "keywords": [
+        "Machine Learning",
+        "Feature Engineering"
+      ],
+      "constraints": "Split the dataset into a training set and a test set with a ratio of 70:30 using sklearn's train_test_split function with a random_state of 42. Don't balance the classes or perform any other preprocessing that isn't mentioned.",
+      "format": "@classifier_accuracy[Accuracy Score]\nwhere \"Accuracy Score\" is a float between 0 and 1, rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the average age of male passengers in each passenger class? How does it compare to the average age of female passengers in each passenger class?",
+    "answer": "[['average_age_male_class2', '30.94'], ['average_age_female_class3', '23.07'], ['average_age_female_class1', '41.33'], ['average_age_female_class2', '24.38'], ['average_age_male_class1', '40.52'], ['average_age_male_class3', '24.53']]",
+    "data": [
+      "/data/daeval/titanic_test.csv"
+    ],
+    "metadata": {
+      "original_id": 527,
+      "keywords": [
+        "Summary Statistics",
+        "Distribution Analysis"
+      ],
+      "constraints": "Determine the average age by using all the non-null age data for male and female passengers in each passenger class. Use the arithmetic mean formula for your calculation. The output should include the average age for males and females in each of passenger classes 1, 2, and 3.",
+      "format": "@average_age_male_class1[age], @average_age_male_class2[age], @average_age_male_class3[age], @average_age_female_class1[age], @average_age_female_class2[age], @average_age_female_class3[age]. The \"age\" is a number rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Are there any outliers in the fare paid by the passengers? If so, how many are there and can you identify them?",
+    "answer": "[['outlier_ids', '904, 916, 940, 945, 951, 956, 961, 966, 967, 973, 988, 1006, 1010, 1033, 1034, 1042, 1048, 1071, 1073, 1076, 1080, 1088, 1094, 1104, 1109, 1110, 1126, 1128, 1131, 1134, 1144, 1162, 1164, 1179, 1185, 1198, 1200, 1206, 1208, 1216, 1219, 1234, 1235, 1244, 1252, 1257, 1263, 1266, 1267, 1282, 1289, 1292, 1299, 1303, 1306'], ['outlier_count', '55']]",
+    "data": [
+      "/data/daeval/titanic_test.csv"
+    ],
+    "metadata": {
+      "original_id": 528,
+      "keywords": [
+        "Outlier Detection",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Identify outliers using the IQR method where a fare is considered an outlier if it is 1.5 times the IQR above the third quartile or below the first quartile. Use all fare values for this analysis and do not consider the outlier if it's missing.",
+      "format": "@outlier_count[count], @outlier_ids[id1, id2, ...]. The \"count\" is an integer. \"id1, id2, ...\" are the \"PassengerId\"s of the outliers, separated by commas and sorted in ascending order.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Can you identify any patterns or relationships between the number of siblings/spouses each passenger had aboard and the number of parents/children they had aboard?",
+    "answer": "[['correlation_coefficient', '0.31'], ['relationship_type', 'nonlinear'], ['p_value', '0.0000']]",
+    "data": [
+      "/data/daeval/titanic_test.csv"
+    ],
+    "metadata": {
+      "original_id": 529,
+      "keywords": [
+        "Correlation Analysis",
+        "Feature Engineering"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between the number of siblings/spouses (SibSp) and the number of parents/children (Parch). Assess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05. Report the p-value associated with the correlation test. Consider the relationship to be linear if the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5. Consider the relationship to be nonlinear if the p-value is less than 0.05 and the absolute value of r is less than 0.5. If the p-value is greater than or equal to 0.05, report that there is no significant correlation.",
+      "format": "@correlation_coefficient[r_value], @p_value[p_value], @relationship_type[relationship_type]. Where \"r_value\" is a float number between -1 and 1, rounded to two decimal places. \"p_value\" is a float number between 0 and 1, rounded to four decimal places. \"relationship_type\" is a string that can either be \"linear\", \"nonlinear\", or \"none\".",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between the age of the passengers and the fare paid? How does this correlation differ among male and female passengers?",
+    "answer": "[['correlation_coefficient_male', '0.31'], ['relationship_type_male', 'nonlinear'], ['relationship_type_female', 'nonlinear'], ['p_value_female', '0.0000'], ['correlation_coefficient_female', '0.39'], ['p_value_male', '0.0000']]",
+    "data": [
+      "/data/daeval/titanic_test.csv"
+    ],
+    "metadata": {
+      "original_id": 530,
+      "keywords": [
+        "Correlation Analysis",
+        "Distribution Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between age and fare for male and female passengers separately. Assess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05. Report the p-value associated with the correlation test. Consider the relationship to be linear if the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5. Consider the relationship to be nonlinear if the p-value is less than 0.05 and the absolute value of r is less than 0.5. If the p-value is greater than or equal to 0.05, report that there is no significant correlation.",
+      "format": "@correlation_coefficient_male[r_value]\n@p_value_male[p_value]\n@relationship_type_male[relationship_type]\n@correlation_coefficient_female[r_value]\n@p_value_female[p_value]\n@relationship_type_female[relationship_type]\nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to four decimal places.\nwhere \"relationship_type\" is a string that can either be \"linear\", \"nonlinear\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the mean length of the abalone in mm?",
+    "answer": "[['mean_length', '0.52']]",
+    "data": [
+      "/data/daeval/abalone.csv"
+    ],
+    "metadata": {
+      "original_id": 542,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Perform arithmetical mean operation on the length column, use rounded number to two decimal places as the answer.",
+      "format": "@mean_length[mean_length_value], where \"mean_length_value\" is a number between 1 and 999, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between the diameter and the number of rings of the abalone? If so, what is the correlation coefficient?",
+    "answer": "[['correlation_coefficient', '0.57'], ['relationship_status', 'correlate']]",
+    "data": [
+      "/data/daeval/abalone.csv"
+    ],
+    "metadata": {
+      "original_id": 543,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength of the linear relationship between diameter and rings.\nConsider the relationship to correlate if the absolute value of r is greater than or equal to 0.1.\nIf the absolute value of r is less than 0.1, report that there is no significant correlation.",
+      "format": "@correlation_coefficient[r_value]\n@relationship_status[relation_status]\nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"relation_status\" is a string that can either be \"correlate\" or \"none\" based on the conditions specified in the constraints.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Explore the correlation between the length and the weight of the whole abalone. Additionally, perform feature engineering by creating a new feature called \"volume\" by multiplying the length, diameter, and height of the abalone. Determine if the volume feature improves the accuracy of predicting the number of rings using a linear regression model.",
+    "answer": "[['volume_feature_model_rmse', '2.2092'], ['correlation_coefficient', '0.9253'], ['original_model_rmse', '2.2192']]",
+    "data": [
+      "/data/daeval/abalone.csv"
+    ],
+    "metadata": {
+      "original_id": 549,
+      "keywords": [
+        "Correlation Analysis",
+        "Feature Engineering",
+        "Machine Learning"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient to assess the strength and direction of the linear relationship between length and the weight. The volume feature should be created by multiplying the length, diameter, and height of the abalone. Use the sklearn's linear regression model to predict the number of rings. Split the data into a 70% train set and a 30% test set. Evaluate the models by calculating the root mean squared error (RMSE) with the test set.",
+      "format": "@correlation_coefficient[number], @original_model_rmse[number], @volume_feature_model_rmse[number]\nwhere \"number\" is a number rounded to four decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform comprehensive data preprocessing on the abalone dataset. Handle any missing values and scale the variables (length, diameter, height, whole weight, shucked weight, viscera weight, shell weight) using min-max normalization. Then, perform a distribution analysis to determine if the scaled variables adhere to a normal distribution.",
+    "answer": "[['distribution_type', '\"Non-Normal\"'], ['min_max_scaler_scale', '\"0-1\"'], ['missing_values_handled', '\"Yes\"']]",
+    "data": [
+      "/data/daeval/abalone.csv"
+    ],
+    "metadata": {
+      "original_id": 550,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Distribution Analysis"
+      ],
+      "constraints": "Any missing values should be filled using the median of the respective column. Use sklearn's MinMaxScaler for normalization, scale the variables to a range between 0 and 1. For distribution analysis, use skewness and kurtosis to determine the distribution type. If skewness is between -0.5 and 0.5 and kurtosis is between -2 and 2, we consider it as normal.",
+      "format": "@missing_values_handled[\"Yes\"/\"No\"], @min_max_scaler_scale[range], @distribution_type[distribution type]\nwhere \"missing_values_handled\" indicates if missing values have been properly handled or not, \"range\" should be a string that specifies the range of the scaled variables, for example \"0-1\", \"distribution type\" should be a string which can be \"Normal\" or \"Non-Normal\".",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the mean of the DBH_CM column?",
+    "answer": "[['mean_dbh_cm', '37.96']]",
+    "data": [
+      "/data/daeval/tree.csv"
+    ],
+    "metadata": {
+      "original_id": 551,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the arithmetic mean of the 'DBH_CM' column. The answer should be rounded to the nearest hundredth. Do not consider missing values, outliers, or data error possibilities, as it was stated there are no missing values in this column and no further cleaning or preprocessing is needed for this problem.",
+      "format": "@mean_dbh_cm[mean_value] where 'mean_value' is a float number with two decimal values.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Are the HT_M column and the BA_M2 column correlated?",
+    "answer": "[['relationship_type', 'linear'], ['correlation_coefficient', '0.806']]",
+    "data": [
+      "/data/daeval/tree.csv"
+    ],
+    "metadata": {
+      "original_id": 552,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between the 'HT_M' and 'BA_M2' columns. The answer should be rounded to the third decimal place. Consider the relationship to be linear if the absolute value of r is greater than or equal to 0.5. Consider the relationship to be non-linear if the absolute value of r is less than 0.5.",
+      "format": "@correlation_coefficient[r_value] @relationship_type[relationship_type] where 'r_value' is a float number between -1 and 1 with three decimal places and 'relationship_type' is a string that is either 'linear', 'nonlinear'.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "How many outliers are there in the TPH_PLT column?",
+    "answer": "[['outliers_count', '3131']]",
+    "data": [
+      "/data/daeval/tree.csv"
+    ],
+    "metadata": {
+      "original_id": 553,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Detect outliers in the 'TPH_PLT' column using the IQR method, where observations that fall below Q1 - 1.5*IQR or above Q3 + 1.5*IQR are considered outliers. Do not consider missing values, as it was stated there are no missing values in this column.",
+      "format": "@outliers_count[count] where 'count' is a non-negative integer.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "How many unique plant species (represented by unique SPP_SYMBOL values) are there in the dataset, where each species has at least 5 observations?",
+    "answer": "[['unique_species_count', '29']]",
+    "data": [
+      "/data/daeval/tree.csv"
+    ],
+    "metadata": {
+      "original_id": 555,
+      "keywords": [
+        "Feature Engineering"
+      ],
+      "constraints": "Count unique SPP_SYMBOL values that appear at least 5 times.",
+      "format": "@unique_species_count[species_count] where \"species_count\" is an integer.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify the date with the highest closing value of the S&P 500 Index (.SPX). Calculate the percentage change in the stock price of Apple Inc. (AAPL) from its closing price on the previous day to its closing price on the identified date.",
+    "answer": "[['max_SPX_date', '2018-01-26'], ['AAPL_price_percentage_change', '0.23']]",
+    "data": [
+      "/data/daeval/tr_eikon_eod_data.csv"
+    ],
+    "metadata": {
+      "original_id": 572,
+      "keywords": [
+        "Summary Statistics",
+        "Correlation Analysis"
+      ],
+      "constraints": "1. The date where the S&P 500 Index (.SPX) reached its maximum value should be identified.\n2. The percentage change is calculated as: ((price on identified date / price on previous day) - 1) * 100.\n3. Percentage change should be calculated only if the previous day data exists. If the identified date is the first date in the dataset, state that the previous day data doesn't exist.\n4. The data for the previous day is defined as the data on the date immediately preceding the identified date when sorting the dates in ascending order. Hunting for the \"previous\" trading day is not required.",
+      "format": "@max_SPX_date[date]\n@AAPL_price_percentage_change[percentage_change]\nwhere \"date\" is a string in the format YYYY-MM-DD and \"percentage_change\" is a number rounded to two decimal places or the string \"Previous day data doesn't exist\".",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform data preprocessing on the stock prices of Microsoft Corporation (MSFT), SPDR S&P 500 ETF Trust (SPY), and the CBOE Volatility Index (.VIX). This preprocessing includes removing missing values, normalizing the data, and encoding any categorical variables. Calculate the correlation matrix between the preprocessed stock prices.",
+    "answer": "[['MSFT_VIX_correlation', '-0.43'], ['SPY_VIX_correlation', '-0.58'], ['MSFT_SPY_correlation', '0.94']]",
+    "data": [
+      "/data/daeval/tr_eikon_eod_data.csv"
+    ],
+    "metadata": {
+      "original_id": 574,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Correlation Analysis"
+      ],
+      "constraints": "1. Missing values should be removed entirely from the dataset.\n2. The normalization method to be used is feature scaling (rescaling the data to range between 0 and 1).\n3. For categorical variables, use one hot encoding method, though no categorical data exists in the provided price columns.\n4. The correlation computation method to be used is Pearson's correlation.",
+      "format": "@MSFT_SPY_correlation[correlation]\n@MSFT_VIX_correlation[correlation]\n@SPY_VIX_correlation[correlation]\nwhere \"correlation\" is a number between -1 and 1, rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Using feature engineering techniques, create a new feature that represents the average stock price of Apple Inc. (AAPL), Microsoft Corporation (MSFT), and Amazon.com, Inc. (AMZN) on the given dates. Calculate the correlation between this new feature and the closing value of the S&P 500 Index (.SPX).",
+    "answer": "[['relationship_type_relation', 'linear'], ['p_value_pval', '0.0000'], ['correlation_coefficient_corr', '0.91']]",
+    "data": [
+      "/data/daeval/tr_eikon_eod_data.csv"
+    ],
+    "metadata": {
+      "original_id": 575,
+      "keywords": [
+        "Feature Engineering",
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between the newly created average stock price feature and the closing value of the S&P 500 Index (.SPX).\nAssess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05.\nReport the p-value associated with the correlation test.\nConsider the relationship to be linear if the p-value is less than 0.05 and the absolute value of r is greater than or equal to 0.5.\nConsider the relationship to be nonlinear if the p-value is less than 0.05 and the absolute value of r is less than 0.5.\nIf the p-value is greater than or equal to 0.05, report that there is no significant correlation.",
+      "format": "@correlation_coefficient_corr[r_value]\n@p_value_pval[p_value]\n@relationship_type_relation[relationship_type]\nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to four decimal places.\nwhere \"relationship_type\" is a string that can either be \"linear\", \"nonlinear\", or \"none\" based on the conditions specified in the constraints.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "What is the average trading volume of AAPL stock?",
+    "answer": "[['mean_volume', '51032080.71']]",
+    "data": [
+      "/data/daeval/e5_aapl.csv"
+    ],
+    "metadata": {
+      "original_id": 578,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean trading volume (\"Volume\") of all available records. Do not consider any values as outliers.",
+      "format": "@mean_volume[mean volume], where \"mean volume\" is a decimal number rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Find out the total number of calls that were abandoned by the callers before being answered by an agent.",
+    "answer": "[['total_abandoned_calls', '9']]",
+    "data": [
+      "/data/daeval/20170413_000000_group_statistics.csv"
+    ],
+    "metadata": {
+      "original_id": 586,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Use Python's pandas DataFrame to load the CSV file. Perform the data cleaning step to ensure there're no null or NaN values for the \"num. calls abandoned\" column. Then use the sum() function on this column to get the total.",
+      "format": "@total_abandoned_calls[integer], where integer represents the total number of calls that were abandoned by the callers before being answered by an agent.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Examine the correlation between the average number of agents talking and the average waiting time for callers.",
+    "answer": "[['correlation_coefficient', '0.639']]",
+    "data": [
+      "/data/daeval/20170413_000000_group_statistics.csv"
+    ],
+    "metadata": {
+      "original_id": 587,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Transform the average waiting time from 'HH:MM:SS' string format to seconds (integer type). Then use the Pearson's method to calculate the correlation coefficient between the average number of agents talking and the transformed average waiting time. The result should be rounded to three decimal places.",
+      "format": "@correlation_coefficient[float], where float is a number between -1 and 1 that measures the correlation between the average number of agents talking and the average waiting time for callers. The number should be rounded to three decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Are there any outliers in the average wait time for callers before being answered by an agent? If so, how many outliers are there?",
+    "answer": "[['num_of_outliers', '2']]",
+    "data": [
+      "/data/daeval/20170413_000000_group_statistics.csv"
+    ],
+    "metadata": {
+      "original_id": 588,
+      "keywords": [
+        "Outlier Detection"
+      ],
+      "constraints": "Detect the outliers using the Z-score method. Consider any data point with an absolute Z-score value greater than 3 as an outlier.",
+      "format": "@num_of_outliers[number_of_outliers] where \"number_of_outliers\" is a non-negative integer value representing the number of outliers detected based on the Z-score method.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Can we generate a new feature representing the call abandonment rate? If so, what is the call abandonment rate for the timestamp \"20170413_080000\"?",
+    "answer": "[['abandonment_rate', '6.25']]",
+    "data": [
+      "/data/daeval/20170413_000000_group_statistics.csv"
+    ],
+    "metadata": {
+      "original_id": 589,
+      "keywords": [
+        "Feature Engineering"
+      ],
+      "constraints": "Calculate the call abandonment rate for a specific timestamp as the total number of calls abandoned divided by the total number of calls made during that time. Express the result as a percentage.",
+      "format": "@abandonment_rate[abandonment_rate_%] where \"abandonment_rate_%\" is a positive real value between 0 and 100, rounded to two decimal places, representing the abandonment rate at the specified timestamp.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Using machine learning techniques, can we predict the number of agents needed to handle incoming calls based on the timestamp and other available information? If so, predict the number for the timestamp \"20170413_120000\".",
+    "answer": "[['predicted_agents', '4']]",
+    "data": [
+      "/data/daeval/20170413_000000_group_statistics.csv"
+    ],
+    "metadata": {
+      "original_id": 590,
+      "keywords": [
+        "Machine Learning"
+      ],
+      "constraints": "Use a simple linear regression model for prediction. The model should be trained with features such as the timestamp, number of calls answered, number of call abandoned, etc., and the target variable should be the average number of agents staffed. Perform prediction for the given timestamp after training the model.",
+      "format": "@predicted_agents[predicted_num_agents] where \"predicted_num_agents\" is a non-negative integer value representing the predicted number of agents for the specified timestamp.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Identify and remove any outliers in the SWX column using the Z-score method with a threshold of 3. Calculate the new mean and standard deviation of the SWX column after removing the outliers.",
+    "answer": "[['std_dev_after_removal', '0.019'], ['outlier_count', '73'], ['mean_after_removal', '0.994']]",
+    "data": [
+      "/data/daeval/well_2_complete.csv"
+    ],
+    "metadata": {
+      "original_id": 604,
+      "keywords": [
+        "Outlier Detection",
+        "Summary Statistics"
+      ],
+      "constraints": "{\nUse z-score for outlier detection with a threshold of 3, i.e, any data point that has a z-score greater than 3 or less than -3 is considered an outlier.\nThe mean and standard deviation should be calculated up to 3 decimal places.\nExclude all rows with null values in the SWX column before calculating mean and standard deviation.}",
+      "format": "{\n@outlier_count[outlier_count]\n@mean_after_removal[mean]\n@std_dev_after_removal[std_dev]\nwhere \"outlier_count\" is an integer representing the total number of outliers detected.\nwhere \"mean\" is a number between -Infinity and Infinity, represented up to three decimal places.\nwhere \"std_dev\" is a non-negative number represented up to three decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Find the correlation coefficient between the number of photos taken during the trajectories and the total duration spent at each point of interest. Use the Python Pandas library's corr() function for the calculation.",
+    "answer": "[['correlation', '0.423']]",
+    "data": [
+      "/data/daeval/traj-Osak.csv"
+    ],
+    "metadata": {
+      "original_id": 618,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient between the number of photos and the total duration spent at each point of interest using pandas' corr() function.",
+      "format": "@correlation[corr] where \"corr\" is a number between -1 and 1 rounded to three decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Identify and remove any outliers in the duration of the trajectories based on the Z-score method where an outlier is defined as a data point that is located outside the whiskers of the box plot (a data point is considered to be an outlier if its z-score is less than -2.5 or greater than 2.5). Calculate the new mean and standard deviation of the trajectory durations after removing the outliers.",
+    "answer": "[['std_dev_new', '2514.65'], ['mean_new', '1253.61']]",
+    "data": [
+      "/data/daeval/traj-Osak.csv"
+    ],
+    "metadata": {
+      "original_id": 619,
+      "keywords": [
+        "Outlier Detection",
+        "Summary Statistics"
+      ],
+      "constraints": "For outlier detection, use the Z-score method where an outlier is defined as a data point that is located outside the whiskers of the box plot (a data point is considered to be an outlier if its z-score is less than -2.5 or greater than 2.5). For calculating the mean and standard deviation, use the built-in Python functions from numpy. The values should be rounded off to 2 decimal places.",
+      "format": "@mean_new[mean_value] @std_dev_new[std_dev_value] where \"mean_value\" and \"std_dev_value\" are numbers rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean, standard deviation, minimum, and maximum values of the \"Volume\" column.",
+    "answer": "[['std_volume', '36218.68'], ['min_volume', '4440.00'], ['max_volume', '478003.00'], ['mean_volume', '32529.47']]",
+    "data": [
+      "/data/daeval/random_stock_data.csv"
+    ],
+    "metadata": {
+      "original_id": 643,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Use Python's built-in statistical functions to calculate these values. Round these numbers to two decimal places.",
+      "format": "@mean_volume[mean value]\n@std_volume[standard deviation value]\n@min_volume[minimum value]\n@max_volume[maximum value]\nwhere \"mean value\", \"standard deviation value\", \"minimum value\", and \"maximum value\" are numbers rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Calculate the mean and standard deviation of the X-coordinate column.",
+    "answer": "[['mean_x', '-259162995.016'], ['std_dev_x', '53529181.172']]",
+    "data": [
+      "/data/daeval/DES=+2006261.csv"
+    ],
+    "metadata": {
+      "original_id": 649,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Use built-in Python functions to compute the mean and standard deviation, and round these values to three decimal places.",
+      "format": "@mean_x[mean] @std_dev_x[standard_deviation] where \"mean\" and \"standard_deviation\" are decimal numbers rounded to three decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Is there any correlation between the X-coordinate and Y-coordinate columns? If so, what is the correlation coefficient?",
+    "answer": "[['correlation_coefficient', '-0.868']]",
+    "data": [
+      "/data/daeval/DES=+2006261.csv"
+    ],
+    "metadata": {
+      "original_id": 650,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Use the Pearson Correlation Coefficient to find the correlation between the X and Y coordinates. Round the calculated correlation coefficient to three decimal places. If the absolute correlation coefficient is less than 0.05, assume the correlation is negligible and consider the correlation value as zero.",
+      "format": "@correlation_coefficient[correlation_coefficient_value] where \"correlation_coefficient_value\" is a decimal number between -1 and 1, rounded to three decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Perform a correlation analysis on the X, Y, and Z coordinate columns. Calculate the Pearson correlation coefficients between the X and Y coordinates, and between the X and Z coordinates.",
+    "answer": "[['correlation_XZ', '0.83'], ['correlation_XY', '-0.87']]",
+    "data": [
+      "/data/daeval/DES=+2006261.csv"
+    ],
+    "metadata": {
+      "original_id": 655,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the correlation coefficient (r) to assess the strength and direction of the linear relationship between the pairs of variables.\nReport the correlation coefficients for both pairs.",
+      "format": "@correlation_XY[r_value_XY]\n@correlation_XZ[r_value_XZ]\nwhere \"r_value_XY\" and \"r_value_XZ\" are numbers between -1 and 1, rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Perform an outlier analysis on the X-coordinate column using the Z-score method. Identify any outliers based on a threshold of 3 standard deviations from the mean. Then, remove the outliers from the dataset and calculate the new mean and standard deviation of the X-coordinate column.",
+    "answer": "[['number_of_outliers', '0'], ['new_mean', '-259162995.02'], ['new_standard_deviation', '53529181.17']]",
+    "data": [
+      "/data/daeval/DES=+2006261.csv"
+    ],
+    "metadata": {
+      "original_id": 656,
+      "keywords": [
+        "Outlier Detection",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate Z-scores for each value in the X-coordinate column.\nIdentify outliers based on a threshold of Z-score greater than 3 or less than -3.\nRemove the identified outliers from the dataset.\nCalculate the new mean and standard deviation for the updated X-coordinate column.\nReport the number of identified outliers, the new mean and the new standard deviation.",
+      "format": "@number_of_outliers[number_of_outliers]\n@new_mean[new_mean_value]\n@new_standard_deviation[new_sd_value]\nwhere \"number_of_outliers\" is an integer.\nwhere \"new_mean_value\" and \"new_sd_value\" are numbers rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean, median, and standard deviation of the 'Close' column.",
+    "answer": "[['median_close', '3599.77'], ['std_close', '4113.51'], ['mean_close', '4349.27']]",
+    "data": [
+      "/data/daeval/YAHOO-BTC_USD_D.csv"
+    ],
+    "metadata": {
+      "original_id": 657,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Using pandas library in Python, ignore the missing values, and round the results to 2 decimal places.",
+      "format": "@mean_close[mean], @median_close[median], @std_close[std_deviation] where \"mean\", \"median\", and \"std_deviation\" are decimal numbers representing the mean, median, and standard deviation of the 'Close' column, respectively, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Find the correlation between the 'High' and 'Low' columns.",
+    "answer": "[['correlation_high_low', '1.00']]",
+    "data": [
+      "/data/daeval/YAHOO-BTC_USD_D.csv"
+    ],
+    "metadata": {
+      "original_id": 659,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient, ignore the missing values, and round the result to 2 decimal places.",
+      "format": "@correlation_high_low[correlation] where \"correlation\" is a decimal number between -1 and 1, representing the Pearson correlation coefficient between 'High' and 'Low' columns, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform feature engineering by creating a new column called 'Price Change' that represents the difference between the 'Close' and 'Open' prices for each day. Calculate the median and standard deviation of the 'Price Change' column.",
+    "answer": "[['stddev_price_change', '284.61'], ['median_price_change', '1.31']]",
+    "data": [
+      "/data/daeval/YAHOO-BTC_USD_D.csv"
+    ],
+    "metadata": {
+      "original_id": 662,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Create the 'Price Change' column by subtracting the 'Open' column from the 'Close' column for each observation. Calculate the median and standard deviation by using the corresponding functions in Python's 'statistics' module.",
+      "format": "@median_price_change[median_price_change] @stddev_price_change[stddev_price_change] where \"median_price_change\" is the median of the 'Price Change' column, rounded to two decimal places. \"stddev_price_change\" is the standard deviation of the 'Price Change' column, rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Create a scatter plot of the 'High' and 'Low' columns to visualize the relationship between the highest and lowest prices for each day. Calculate the Pearson correlation coefficient between these two columns.",
+    "answer": "[['correlation_coefficient', '1.0']]",
+    "data": [
+      "/data/daeval/YAHOO-BTC_USD_D.csv"
+    ],
+    "metadata": {
+      "original_id": 663,
+      "keywords": [
+        "Distribution Analysis",
+        "Correlation Analysis"
+      ],
+      "constraints": "Constraints:\n1. Use the Pearson method to calculate the correlation coefficient.\n2. Round the correlation coefficient to two decimal places.\n3. Do not consider any missing values in the data while calculating the correlation.",
+      "format": "Requires output:\n@correlation_coefficient[correlation_value]\nwhere \"correlation_value\" is a number between -1 and 1, rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Perform data preprocessing by filling the missing values with the mean values of their respective columns. After that, create a new column called 'Price Category' that categorizes the 'Close' prices into 'High', 'Medium', and 'Low'. 'High' is represented by 'Close' prices that are greater than or equal to the 75th percentile of the 'Close' column data; 'Medium' is represented by 'Close' prices that are between the 25th to 75th percentile; 'Low' is represented by 'Close' prices that are less than or equal to the 25th percentile. Calculate the count and proportion of each category in the dataset.",
+    "answer": "[['high_count', '544'], ['low_proportion', '0.25'], ['low_count', '544'], ['medium_proportion', '0.50'], ['medium_count', '1088'], ['high_proportion', '0.25']]",
+    "data": [
+      "/data/daeval/YAHOO-BTC_USD_D.csv"
+    ],
+    "metadata": {
+      "original_id": 665,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Constraints:\n1. Fill missing values using the mean of their respective columns.\n2. Define the three categories (High, Medium, Low) based on the percentiles as specified.\n3. Calculate the count and proportion of each category up to two decimal places.",
+      "format": "Requires output:\n@high_count[high_count] @high_proportion[high_proportion]\n@medium_count[medium_count] @medium_proportion[medium_proportion]\n@low_count[low_count] @low_proportion[low_proportion]\nwhere \"high_count\", \"medium_count\", and \"low_count\" are positive integers.\nwhere \"high_proportion\", \"medium_proportion\", and \"low_proportion\" are a number between 0 and 1, rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the MedianHouseValue column in the provided dataset.",
+    "answer": "[['std_dev', '1.2210'], ['mean_value', '2.1226']]",
+    "data": [
+      "/data/daeval/my_test_01.csv"
+    ],
+    "metadata": {
+      "original_id": 666,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean and standard deviation to four decimal places using built-in Python statistical functions.",
+      "format": "@mean_value[mean], @std_dev[std_dev] where \"mean\" and \"std_dev\" are values rounded to four decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the correlation coefficient between the HouseAge and MedianHouseValue columns in the provided dataset.",
+    "answer": "[['correlation_coefficient', '0.13'], ['p_value', '0.0324'], ['significant_correlation', 'true']]",
+    "data": [
+      "/data/daeval/my_test_01.csv"
+    ],
+    "metadata": {
+      "original_id": 668,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient to assess the strength and direction of the linear relationship between HouseAge and MedianHouseValue. Report the p-value associated with the correlation test with a significance level of 0.05. Indicate whether or not there is a significant correlation based on the p-value.",
+      "format": "@correlation_coefficient[r_value], @p_value[p_value], @significant_correlation[significant_correlation] where \"r_value\" is a number between -1 and 1, rounded to two decimal places; \"p_value\" is a number between 0 and 1, rounded to four decimal places; \"significant_correlation\" is a boolean value indicating whether there is a significant correlation (true) or not (false) based on the conditions specified in the constraints.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify and remove any outliers in the MedInc column of the provided dataset using the IQR method. Then calculate the mean and standard deviation of the cleaned MedInc column.",
+    "answer": "[['standard_deviation', '1.54'], ['mean', '3.73']]",
+    "data": [
+      "/data/daeval/my_test_01.csv"
+    ],
+    "metadata": {
+      "original_id": 669,
+      "keywords": [
+        "Outlier Detection",
+        "Summary Statistics"
+      ],
+      "constraints": "Identify an outlier as any value that falls below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR, where Q1 and Q3 are the first and third quartiles, respectively, and IQR is the interquartile range (Q3 - Q1). Calculate the mean and standard deviation to two decimal places.",
+      "format": "@mean[mean_value] where \"mean_value\" is a float rounded to two decimal places. @standard_deviation[standard_deviation_value] where \"standard_deviation_value\" is a float rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Build a machine learning model to predict the MedianHouseValue based on the following features:\n1. MedInc\n2. AveRooms\n3. Population\n4. Latitude\n5. Longitude\nSplit the dataset into training and testing sets, train the model using linear regression, and evaluate its performance using mean squared error (MSE).",
+    "answer": "[['mse', '0.653']]",
+    "data": [
+      "/data/daeval/my_test_01.csv"
+    ],
+    "metadata": {
+      "original_id": 671,
+      "keywords": [
+        "Machine Learning"
+      ],
+      "constraints": "Split the dataset into 70% for training and 30% for testing. Use linear regression for the machine learning model. Calculate the MSE to three decimal places.",
+      "format": "@mse[mse_value] where \"mse_value\" is a float rounded to three decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Build a machine learning model to predict the MedianHouseValue based on the following features:\n1. MedInc\n2. AveRooms\n3. HouseAge\n4. Latitude\n5. Longitude\nPerform the following steps:\n1. Split the dataset into training and testing sets, where 70% of the dataset is used for training and 30% for testing. Set the random_state as 42 for reproducibility.\n2. Preprocess the data by standardizing the numerical columns (MedInc, AveRooms, HouseAge, Latitude, Longitude).\n3. Train a decision tree regression model on the training set, setting the max_depth to 5.\n4. Evaluate the model's performance using mean absolute error (MAE) on the testing set.\n5. Finally, calculate the Pearson correlation coefficient between the predicted and actual MedianHouseValue values on the testing set.",
+    "answer": "[['pearson_coefficient', '0.6419'], ['mean_absolute_error', '0.6426']]",
+    "data": [
+      "/data/daeval/my_test_01.csv"
+    ],
+    "metadata": {
+      "original_id": 674,
+      "keywords": [
+        "Machine Learning",
+        "Comprehensive Data Preprocessing",
+        "Correlation Analysis"
+      ],
+      "constraints": "Use the sklearn library for splitting the dataset, preprocessing, training the model, and calculation of MAE. Set the random_state to 42 when splitting the dataset. Use the Pearson method to compute the correlation coefficient. Round all output to four decimal places.",
+      "format": "@mean_absolute_error[mae_value] \n@pearson_coefficient[correlation_coefficient] where \"mae_value\" is a float representing the MAE on the testing set rounded to four decimal places, and \"correlation_coefficient\" is a float rounded to four decimal places representing the correlation coefficient between predicted and actual MedianHouseValue values on the testing set.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. What is the mean temperature recorded in the dataset?",
+    "answer": "[['mean_temperature', '29.14']]",
+    "data": [
+      "/data/daeval/ravenna_250715.csv"
+    ],
+    "metadata": {
+      "original_id": 683,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean temperature to two decimal places. No missing values in the temperature data.",
+      "format": "@mean_temperature[value], where \"value\" is a number representing the mean temperature, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Does the humidity level in the dataset adhere to a normal distribution?",
+    "answer": "[['distribution_type', 'normal'], ['shapiro_p_value', '0.9166']]",
+    "data": [
+      "/data/daeval/ravenna_250715.csv"
+    ],
+    "metadata": {
+      "original_id": 684,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Use the Shapiro-Wilk test with a significance level (alpha) of 0.05 to determine if the distribution of the humidity level adheres to a normal distribution. Report the p-value associated with the test. If the p-value is greater than 0.05, it can be considered as normally distributed; otherwise, it is not.",
+      "format": "@shapiro_p_value[value] @distribution_type[type], where \"value\" is a number representing the p-value from the Shapiro-Wilk test, rounded to four decimal places, and \"type\" is a string that can either be \"normal\" or \"not normal\" based on the p-value.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Is there a correlation between the atmospheric pressure and wind speed in the dataset?",
+    "answer": "[['correlation_coefficient', '0.34'], ['relationship_significance', 'not significant'], ['p_value', '0.1023']]",
+    "data": [
+      "/data/daeval/ravenna_250715.csv"
+    ],
+    "metadata": {
+      "original_id": 685,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (r) to assess the strength and direction of the linear relationship between atmospheric pressure and wind speed. Assess the significance of the correlation using a two-tailed test with a significance level (alpha) of 0.05. Report the p-value associated with the correlation test. Consider the relationship to be significant if the p-value is less than 0.05.",
+      "format": "@correlation_coefficient[r_value] @p_value[value] @relationship_significance[significance], where \"r_value\" is a number between -1 and 1, rounded to two decimal places, \"value\" is a number representing the p-value from the correlation test, rounded to four decimal places, and \"significance\" is a string that can either be \"significant\" or \"not significant\" based on the p-value.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Perform outlier detection on the wind speed column using Z-scores. Identify the number of outliers and provide the values of the outliers. After removing the outliers, calculate the mean and standard deviation of the wind speed column.",
+    "answer": "[['mean_wind_speed', '2.29'], ['std_deviation_wind_speed', '1.15'], ['number_of_outliers', '0']]",
+    "data": [
+      "/data/daeval/ravenna_250715.csv"
+    ],
+    "metadata": {
+      "original_id": 690,
+      "keywords": [
+        "Outlier Detection",
+        "Summary Statistics"
+      ],
+      "constraints": "Identify outliers using Z-score method considering points that have Z-score greater than 3 or less than -3 as outliers. After outlier detection, remove these identified outliers from the dataset and calculate the mean and standard deviation of the wind speed column.",
+      "format": "@number_of_outliers[integer] @mean_wind_speed[number, rounded to 2 decimal places] @std_deviation_wind_speed[number, rounded to 2 decimal places]",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. What is the mean number of wins in the \"JAMES LOGAN\" column?",
+    "answer": "[['mean_wins', '2.6']]",
+    "data": [
+      "/data/daeval/Current_Logan.csv"
+    ],
+    "metadata": {
+      "original_id": 710,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Assume all values in the \"JAMES LOGAN\" column are numeric, and convert strings to numbers if necessary. Ignore any rows where \"JAMES LOGAN\" is missing or cannot be converted to a number. Use pandas `mean()` function to calculate the mean.",
+      "format": "@mean_wins[mean]",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. What is the percentage of missing values in the \"Unnamed: 8\" column?",
+    "answer": "[['missing_percentage', '95.12']]",
+    "data": [
+      "/data/daeval/Current_Logan.csv"
+    ],
+    "metadata": {
+      "original_id": 715,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "The missing values are represented as NaN in pandas dataframe.",
+      "format": "@missing_percentage[percentage], where \"percentage\" is a number between 0 and 100, representing the percentage of missing values in the column, rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Calculate the mean and median of the 'mpg' column.",
+    "answer": "[['median_mpg', '22.75'], ['mean_mpg', '23.45']]",
+    "data": [
+      "/data/daeval/auto-mpg.csv"
+    ],
+    "metadata": {
+      "original_id": 719,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean and median of the 'mpg' column without excluding any data. Round your results to two decimal places.",
+      "format": "@mean_mpg[mean_value], @median_mpg[median_value] where 'mean_value' and 'median_value' are numbers rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. Identify the vehicle with the highest horsepower and provide its corresponding model year. Calculate the average horsepower along with the standard deviation for all vehicles within the same model year as this vehicle.",
+    "answer": "[['highest_horsepower_vehicle', '1973'], ['average_horsepower', '130.48'], ['standard_deviation', '45.83']]",
+    "data": [
+      "/data/daeval/auto-mpg.csv"
+    ],
+    "metadata": {
+      "original_id": 722,
+      "keywords": [
+        "Summary Statistics",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "For the \"average horsepower\", calculate it using the arithmetic mean formula. Calculate the standard deviation using the population standard deviation formula, not the sample standard deviation formula. Round both measures to two decimal places.",
+      "format": "@highest_horsepower_vehicle[vehicle_model_year]\n@average_horsepower[same_year_avg_horsepower]\n@standard_deviation[same_year_horsepower_std]\nwhere \"vehicle_model_year\" is an integer from 1900 to the current year. \"same_year_avg_horsepower\" and \"same_year_horsepower_std\" are numbers rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Generate a new feature called 'power-to-weight ratio' by dividing the horsepower by the weight for each vehicle. Calculate the mean and standard deviation of this new feature.",
+    "answer": "[['mean_ratio', '0.03'], ['std_ratio', '0.01']]",
+    "data": [
+      "/data/daeval/auto-mpg.csv"
+    ],
+    "metadata": {
+      "original_id": 723,
+      "keywords": [
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the 'power-to-weight ratio' by dividing the horsepower by the weight for each vehicle, not the other way around. For the \"average power-to-weight ratio\", calculate it using the arithmetic mean formula. Calculate the standard deviation using the population standard deviation formula, not the sample standard deviation formula. Round both measures to two decimal places.",
+      "format": "@mean_ratio[avg_power_weight_ratio]\n@std_ratio[power_weight_ratio_std]\nwhere \"avg_power_weight_ratio\" and \"power_weight_ratio_std\" are numbers rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Perform outlier detection on the 'acceleration' column using the Z-score method. Identify any outliers and remove them from the dataset. Recalculate the mean and standard deviation of the 'acceleration' column after removing the outliers.",
+    "answer": "[['std_acceleration', '2.68'], ['mean_acceleration', '15.49']]",
+    "data": [
+      "/data/daeval/auto-mpg.csv"
+    ],
+    "metadata": {
+      "original_id": 724,
+      "keywords": [
+        "Outlier Detection",
+        "Summary Statistics",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Consider observations as outliers if their Z-scores are outside of the -3 to 3 range. For the \"average acceleration\" after outlier removal, calculate it using the arithmetic mean formula. Calculate the standard deviation using the population standard deviation formula, not the sample standard deviation formula. Round both measures to two decimal places.",
+      "format": "@mean_acceleration[avg_acceleration]\n@std_acceleration[acceleration_std]\nwhere \"avg_acceleration\" and \"acceleration_std\" are numbers rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "2. Perform comprehensive data preprocessing on the 'horsepower' column. Handle any missing values by imputing them with the mean horsepower value. Then, transform the 'horsepower' column by applying a log transformation. Calculate the mean and standard deviation of the transformed 'horsepower' column.",
+    "answer": "[['mean_transformed_horsepower', '4.59'], ['stddev_transformed_horsepower', '0.34']]",
+    "data": [
+      "/data/daeval/auto-mpg.csv"
+    ],
+    "metadata": {
+      "original_id": 726,
+      "keywords": [
+        "Comprehensive Data Preprocessing",
+        "Feature Engineering",
+        "Summary Statistics"
+      ],
+      "constraints": "{\n- Handle missing values by imputing them with the mean 'horsepower'.\n- Log-transformation should be a natural logarithm (base e).\n- Mean and standard deviation should be calculated after the transformation and rounding to two decimal places.\n}",
+      "format": "{\n@mean_transformed_horsepower[mean_transformed_horsepower]\n@stddev_transformed_horsepower[stddev_transformed_horsepower]\nwhere \"mean_transformed_horsepower\" is the mean of the transformed 'horsepower' and \"stddev_transformed_horsepower\" is the standard deviation of the transformed 'horsepower'. Each value should be a float, rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "3. Use machine learning techniques to predict the 'mpg' of a vehicle based on its 'weight' and 'acceleration' features. Split the dataset into a training set and a testing set with the ratio of size 8:2. Train a linear regression model on the training set and evaluate its performance by calculating the mean squared error (MSE) on the testing set.",
+    "answer": "[['test_mse', '17.66']]",
+    "data": [
+      "/data/daeval/auto-mpg.csv"
+    ],
+    "metadata": {
+      "original_id": 727,
+      "keywords": [
+        "Machine Learning",
+        "Correlation Analysis"
+      ],
+      "constraints": "{\n- Use the linear regression algorithm provided by the sklearn library in Python.\n- The dataset should be split into a training set and a testing set with the ratio 8:2 using a random_state of 42.\n- MSE should be calculated on the testing set only and rounding to two decimal places.\n}",
+      "format": "{\n@test_mse[test_mse]\nwhere \"test_mse\" is the mean squared error of the testing set. The value should be a float, rounded to two decimal places.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Is there a correlation between population and GDP per capita for the recorded years and countries in the dataset?",
+    "answer": "[['p_value', '0.2909'], ['correlation_coefficient', '-0.03']]",
+    "data": [
+      "/data/daeval/gapminder_cleaned.csv"
+    ],
+    "metadata": {
+      "original_id": 730,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient (pearson’s r) between \"Pop\" and \"Gdppercap\" columns. Use the scipy library's pearsonr() function and consider the correlation to be significant if p-value is less than 0.05.",
+      "format": "@correlation_coefficient[r_value]\n@p_value[p_value]\nwhere \"r_value\" is a number between -1 and 1, rounded to two decimal places.\nwhere \"p_value\" is a number between 0 and 1, rounded to four decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Apply feature engineering techniques to create a new feature in the dataset that represents the GDP per capita in logarithmic scale (base 10). Implement this feature transformation using Python code.",
+    "answer": "[['has_nan_values_in_new_feature', 'False'], ['new_feature_mean', '3.54'], ['new_feature_std', '0.54']]",
+    "data": [
+      "/data/daeval/gapminder_cleaned.csv"
+    ],
+    "metadata": {
+      "original_id": 733,
+      "keywords": [
+        "Feature Engineering"
+      ],
+      "constraints": "Calculate the logarithm with base 10.\nWhile calculating the logarithm, assume all GDP per capita figures are positive.",
+      "format": "@has_nan_values_in_new_feature[boolean]\n@new_feature_mean[mean]\n@new_feature_std[std]\nwhere \"boolean\" is True or False, indicating whether there are NaN values in the newly created feature.\nwhere \"mean\" is a number (rounded to 2 decimal places) representing the mean of the newly created feature.\nwhere \"std\" is a number (rounded to 2 decimal places) representing the standard deviation of the newly created feature.",
+      "level": "hard"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Calculate the mean and standard deviation of the \"Income\" column in the Credit.csv file.",
+    "answer": "[['mean_income', '45.22'], ['std_dev_income', '35.24']]",
+    "data": [
+      "/data/daeval/Credit.csv"
+    ],
+    "metadata": {
+      "original_id": 737,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean and standard deviation using built-in functions in Python's pandas library. Round the outputs to two decimal places.",
+      "format": "@mean_income[mean_value], @std_dev_income[std_dev_value] where \"mean_value\" and \"std_dev_value\" are the calculated mean and standard deviation of the \"Income\" column, respectively. Both should be rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Check if the distribution of the \"Age\" column in the Credit.csv file adheres to a normal distribution.",
+    "answer": "[['is_normal', 'Not Normal']]",
+    "data": [
+      "/data/daeval/Credit.csv"
+    ],
+    "metadata": {
+      "original_id": 738,
+      "keywords": [
+        "Distribution Analysis"
+      ],
+      "constraints": "Use the Shapiro-Wilk test from scipy.stats library to test for normality. Use a significance level (alpha) of 0.05. If the p-value is less than the significance level, declare that the distribution is not normal. Otherwise, declare that the distribution is normal.",
+      "format": "@is_normal[is_normal] where \"is_normal\" is a string that can be either \"Normal\" or \"Not Normal\" based on the Shapiro-Wilk test result.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Determine the correlation coefficient between the \"Limit\" and \"Balance\" columns in the Credit.csv file.",
+    "answer": "[['correlation_coefficient', '0.86']]",
+    "data": [
+      "/data/daeval/Credit.csv"
+    ],
+    "metadata": {
+      "original_id": 739,
+      "keywords": [
+        "Correlation Analysis"
+      ],
+      "constraints": "Calculate the Pearson correlation coefficient to represent the correlation. Round the result to two decimal places.",
+      "format": "@correlation_coefficient[correlation_value] where \"correlation_value\" is the calculated Pearson correlation coefficient between \"Limit\" and \"Balance\", rounded to two decimal places.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "Identify any outliers in the \"Balance\" column of the Credit.csv file using the Z-score method.",
+    "answer": "[['outliers', '1']]",
+    "data": [
+      "/data/daeval/Credit.csv"
+    ],
+    "metadata": {
+      "original_id": 740,
+      "keywords": [
+        "Outlier Detection",
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "Define an outlier to be any data point that falls more than 3 standard deviations from the mean. Use the formula Z = (X - μ) / σ where X is a data point, μ is the mean, and σ is the standard deviation.",
+      "format": "@outliers[outliers_count], where \"outliers_count\" is an integer indicating the total number of outliers identified.",
+      "level": "medium"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "1. What is the mean value of the maximum temperature (TMAX_F) recorded in the dataset?",
+    "answer": "[['mean_TMAX_F', '56.38']]",
+    "data": [
+      "/data/daeval/weather_data_1864.csv"
+    ],
+    "metadata": {
+      "original_id": 755,
+      "keywords": [
+        "Summary Statistics"
+      ],
+      "constraints": "Calculate the mean (average) as the sum of all recorded values divided by the total number of observations.",
+      "format": "@mean_TMAX_F[mean_temperature] where \"mean_temperature\" is a positive number rounded to two decimal places.",
+      "level": "easy"
+    }
+  },
+  {
+    "context": "No context is necessary for this task.",
+    "question": "6. For each station, are there any missing values in the observation values (obs_value)? If yes, which station has the most missing values and how many missing values does it have?",
+    "answer": "[['most_missing_station_name', '\"AGE00135039\"'], ['most_missing_station_count', '0']]",
+    "data": [
+      "/data/daeval/weather_data_1864.csv"
+    ],
+    "metadata": {
+      "original_id": 760,
+      "keywords": [
+        "Comprehensive Data Preprocessing"
+      ],
+      "constraints": "In your analysis:\n- Assume that missing values are represented as \"NaN\".\n- Calculate the number of missing values for each station.",
+      "format": "@most_missing_station_name[\"station_name\"]\n@most_missing_station_count[num_missing_obs]\n\nwhere \"station_name\" is a string representing the name of the station with the most missing observation value.\nwhere \"num_missing_obs\" is a number greater than or equal to 0, representing the number of missing observation values for the station with the most missing values.",
+      "level": "medium"
+    }
+  }
+]

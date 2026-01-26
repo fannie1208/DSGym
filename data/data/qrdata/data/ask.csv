@@ -1,0 +1,220 @@
+question_class,question,response
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,disclose
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,disclose
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,disclose
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,disclose
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,disclose
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",disclose
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+neg_assumption,What problems does it have?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,disclose
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+pos_assumption,"It doesn't have any problems, does it?",hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+neg_assumption,What problems does it have?,hide
+general,What can you tell me about it?,hide
+neg_assumption,What problems does it have?,disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",hide
+pos_assumption,"It doesn't have any problems, does it?",disclose
+general,What can you tell me about it?,hide
+general,What can you tell me about it?,hide
