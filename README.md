@@ -69,6 +69,16 @@ sudo docker build -t manager-prebuilt ./manager
 sudo docker compose -f docker-compose-bio.yml up -d --build
 
 sudo docker compose -f docker-compose-bio.yml down
+
+# DSPredict-specific env
+python generate_compose.py -n 8 --types "executor-kaggle:8" -m ../data/data --output docker-dspredict-hard.yml -c container_config_dspredict_hard.json \
+-g 0,1,2,3,4,5,6,7 -s ../submissions -e "EXECUTION_TIMEOUT=3600,MEM_LIMIT=24G,CPUS=8,MEM_RESERVATION=100G" \
+
+sudo docker build -t executor-kaggle ./container_images/kaggle_image
+sudo docker build -t manager-prebuilt ./manager
+sudo docker compose -f docker-dspredict-hard.yml up -d --build
+
+sudo docker compose -f docker-dspredict-hard.yml down
 ```
 
 ### 3. Run Evaluations
@@ -92,6 +102,14 @@ dsgym eval --model together_ai/Qwen/Qwen3-235B-A22B-Instruct-2507-tput --dataset
 dsgym --help
 dsgym eval --help
 ```
+To run DSPredict, ensure your Kaggle API credentials are correctly configured. Generate a kaggle api key and:
+
+```bash
+export KAGGLE_API_TOKEN=$YOUR_KEY
+```
+
+See the [Kaggle API documentation](https://www.kaggle.com/docs/api) for more details.
+
 
 #### Using Example Scripts
 

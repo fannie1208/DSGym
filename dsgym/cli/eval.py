@@ -38,7 +38,7 @@ def add_eval_parser(subparsers):
     
     # Dataset configuration
     parser.add_argument("--dataset", type=str, required=True,
-                       choices=["daeval", "discoverybench", "qrdata", "dabstep", "dspredict", "bio"],
+                       choices=["daeval", "discoverybench", "qrdata", "dabstep", "dspredict-easy", "dspredict-hard","bio"],
                        help="Dataset to evaluate on")
     parser.add_argument("--limit", type=int, default=None,
                        help="Number of samples to evaluate")
@@ -122,8 +122,13 @@ def run_eval(args) -> int:
         load_config = {
             "limit": args.limit
         }
-        
-        dataset = DatasetRegistry.load(args.dataset, **dataset_config)
+        dataset_name = args.dataset
+        if "dspredict" in dataset_name:
+            dataset_config["split"] = dataset_name.split("-")[-1]
+            dataset_name = dataset_name.split("-")[0]
+            dataset_config["virtual_data_root"] = "/data"
+            load_config["split"] = dataset_config["split"]
+        dataset = DatasetRegistry.load(dataset_name, **dataset_config)
         samples = dataset.load(**load_config)
         print(f"✅ Loaded {len(samples)} samples from {args.dataset}")
         
@@ -157,7 +162,7 @@ def run_eval(args) -> int:
     try:
         results = evaluator.evaluate(
             agent=agent,
-            samples=samples,
+            tasks=samples,
             config=config,
             save_results=True
         )

@@ -11,7 +11,7 @@ from ..registry import register_dataset
 from ..utils import apply_limit_and_start, validate_file_exists, create_standard_task
 from ..prompts import SYSTEM_PROMPT_DSPREDICT
 from dsgym.datasets.config import get_task_path, RAW_DATA_DIR
-
+from .kaggle_downloader import KaggleChallengeDownloader
 
 DSPREDICT_INSTRUCTIONS = """**INSTRUCTIONS:**
 1. Load and explore the **training** and **test** datasets using Python (use the dataset folder location provided).
@@ -106,6 +106,9 @@ class DSPredictDataset(BaseDataset):
         )
 
         samples = []
+        downloader = None
+        kaggle_data_dir = RAW_DATA_DIR / f"dspredict-{split}"
+
         for idx, item in enumerate(items):
             docker_path = item['docker_challenge_path']
             
@@ -114,10 +117,27 @@ class DSPredictDataset(BaseDataset):
             else:
                 challenge_dir = docker_path.split('/')[-1]
             
+            competition_path = kaggle_data_dir / challenge_dir
+            if not competition_path.exists():
+                print(f"Competition data not found: {challenge_dir}")
+                print(f"Attempting to download from Kaggle...")
+                
+                if downloader is None:
+                    downloader = KaggleChallengeDownloader(download_dir=str(kaggle_data_dir))
+                
+                competition_name = item['challenge_name']
+                result = downloader.download_competition_data(competition_name)
+                
+                if result['status'] == 'failed':
+                    print(f"Failed to download {competition_name}, skipping sample")
+                    continue
+                
+                print(f"Successfully downloaded {competition_name}")
+
             from ..utils import construct_data_paths
             data_paths = construct_data_paths(
                 relative_paths=[challenge_dir],
-                dataset_name='',
+                dataset_name=f"dspredict-{split}",
                 data_root=RAW_DATA_DIR,
                 virtual_data_root=self.virtual_data_root
             )
