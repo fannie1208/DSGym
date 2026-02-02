@@ -35,7 +35,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_000:/submission
+    - ../submissions/container_000:/submission
   executor-001:
     image: executor-kaggle
     command: python main.py
@@ -71,7 +71,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_001:/submission
+    - ../submissions/container_001:/submission
   executor-002:
     image: executor-kaggle
     command: python main.py
@@ -107,7 +107,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_002:/submission
+    - ../submissions/container_002:/submission
   executor-003:
     image: executor-kaggle
     command: python main.py
@@ -143,7 +143,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_003:/submission
+    - ../submissions/container_003:/submission
   executor-004:
     image: executor-kaggle
     command: python main.py
@@ -179,7 +179,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_004:/submission
+    - ../submissions/container_004:/submission
   executor-005:
     image: executor-kaggle
     command: python main.py
@@ -215,7 +215,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_005:/submission
+    - ../submissions/container_005:/submission
   executor-006:
     image: executor-kaggle
     command: python main.py
@@ -251,7 +251,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_006:/submission
+    - ../submissions/container_006:/submission
   executor-007:
     image: executor-kaggle
     command: python main.py
@@ -287,7 +287,7 @@ services:
             - gpu
     volumes:
     - ../data/data:/data:ro
-    - ./submissions/container_007:/submission
+    - ../submissions/container_007:/submission
   manager:
     image: manager-prebuilt
     command: python main.py

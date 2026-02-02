@@ -16,7 +16,7 @@ from typing import Optional
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from dsgym.datasets import DatasetRegistry
-from dsgym.agents import ReActDSAgent
+from dsgym.agents import ReActDSAgent, DSPredictReActAgent
 from dsgym.eval import Evaluator
 from dsgym.eval.utils import EvaluationConfig
 
@@ -102,7 +102,15 @@ def run_eval(args) -> int:
         agent_config["api_key"] = args.api_key
     
     try:
-        agent = ReActDSAgent(
+        if "dspredict" in args.dataset:
+            agent = DSPredictReActAgent(
+                backend=args.backend,
+                model=args.model,
+                submission_dir="./submissions",
+                **agent_config
+            )
+        else:
+            agent = ReActDSAgent(
             backend=args.backend,
             model=args.model,
             **agent_config
@@ -202,6 +210,8 @@ def run_eval(args) -> int:
                 print("-" * 20)
                 for metric_name, score in metric_scores.items():
                     print(f"{metric_name}: {score:.3f}")
+        if "dspredict" in args.dataset:
+            dataset.print_dspredict_results_overview(results["results"])
         
         return 0
         

@@ -33,7 +33,7 @@ except RuntimeError:
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from dsgym.datasets import DatasetRegistry, load_tasks_from_dataset, create_custom_task
-from dsgym.agents import ReActDSAgent
+from dsgym.agents import ReActDSAgent, DSPredictReActAgent
 from dsgym.eval import Evaluator
 from dsgym.eval.utils import EvaluationConfig
 
@@ -64,6 +64,16 @@ DATASET_CONFIG = {
         "agent_type": "react", 
         "extra_params": [],
         "result_processor": "default"
+    },
+    "dspredict-easy": {
+        "agent_type": "dspredict",
+        "extra_params": [],
+        "result_processor": "dspredict"
+    },
+    "dspredict-hard": {
+        "agent_type": "dspredict",
+        "extra_params": [],
+        "result_processor": "dspredict"
     }
 }
 
@@ -136,6 +146,9 @@ def create_agent(args, dataset_config):
     agent_type = dataset_config["agent_type"]
     if agent_type == "react":
         agent_class = ReActDSAgent
+    elif agent_type == "dspredict":
+        agent_class = DSPredictReActAgent
+        agent_config["submission_dir"] = "./submissions"
     else:
         raise ValueError(f"Unknown agent type: {agent_type}")
     
@@ -148,7 +161,8 @@ def create_agent(args, dataset_config):
 
 def load_dataset(args):
     """Load dataset with appropriate configuration."""
-    dataset = DatasetRegistry.load(args.dataset)
+    dataset_name = args.dataset
+    dataset_config = {}
     
     # Build load configuration
     load_config = {
@@ -163,7 +177,15 @@ def load_dataset(args):
         load_config["dataset_type"] = args.dataset_type
         if args.dataset_type == "synthetic" and args.synthetic_path:
             load_config["synthetic_dataset_path"] = args.synthetic_path
+    elif "dspredict" in args.dataset:
+        # Handle dspredict-easy and dspredict-hard
+        split = args.dataset.split("-")[-1]  # "easy" or "hard"
+        dataset_name = "dspredict"
+        dataset_config["split"] = split
+        dataset_config["virtual_data_root"] = "/data"
+        load_config["split"] = split
     
+    dataset = DatasetRegistry.load(dataset_name, **dataset_config)
     tasks = dataset.load(**load_config)
     return dataset, tasks
 
@@ -195,6 +217,8 @@ def process_results(args, results, dataset_config):
         _process_daeval_results(evaluation_results)
     elif result_processor == "dabstep":
         _process_dabstep_results(evaluation_results)
+    elif result_processor == "dspredict":
+        _process_dspredict_results(args, evaluation_results)
     else:
         _process_default_results(evaluation_results)
 
@@ -244,6 +268,15 @@ def _process_dabstep_results(evaluation_results):
                     pred_preview += "..."
                 print(f"  Prediction: {pred_preview}")
             print()
+
+
+def _process_dspredict_results(args, evaluation_results):
+    """Process DSPredict-specific results."""
+    # Reload dataset to call print_dspredict_results_overview
+    dataset_name = "dspredict"
+    split = args.dataset.split("-")[-1]
+    dataset = DatasetRegistry.load(dataset_name, split=split, virtual_data_root="/data")
+    dataset.print_dspredict_results_overview(evaluation_results)
 
 
 def _process_default_results(evaluation_results):

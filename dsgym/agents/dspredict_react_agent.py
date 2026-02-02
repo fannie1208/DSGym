@@ -24,6 +24,7 @@ class DSPredictReActAgent(ReActDSAgent):
         self.submission_dir = kwargs.get('submission_dir', '')
         # Optional HTTP client timeout (seconds) for code execution manager
         self.time_out = kwargs.get('time_out')
+        self.time_out = 60
 
     def solve_task(self, sample: Dict[str, Any], **kwargs) -> Dict[str, Any]:
         """

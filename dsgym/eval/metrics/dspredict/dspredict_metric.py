@@ -13,6 +13,7 @@ import shutil
 import time
 from datetime import datetime
 from typing import Optional, Dict, Any
+from tenacity import retry, stop_after_attempt, wait_random
 
 from ..base import BaseMetric, MetricResult
 
@@ -31,7 +32,7 @@ class DSPredictSubmissionManager:
         try:
             import json
             from kagglesdk import KaggleClient
-            from dsgym.eval.metrics.kaggle.leaderboard_utils import KaggleScraper  # local fallback if present
+            from dsgym.eval.metrics.dspredict.leaderboard_utils import KaggleScraper  # local fallback if present
 
             # Prefer repo-local kaggle.json, fallback to default path
             creds = None
@@ -115,7 +116,11 @@ class DSPredictSubmissionManager:
         final_info["status"] = str(final_info.get("status", "TIMEOUT"))
         return final_info
 
+@retry(wait=wait_random(10, 15))
+def get_next_page(client, req):
+    return client.competitions.competition_api_client.get_leaderboard(req)
 
+@retry(wait=wait_random(2, 5), stop=stop_after_attempt(3))
 def get_full_leaderboard(competition_name: str) -> Dict[str, Any]:
     """Fetch public and private leaderboard scores across pages."""
     import statistics
@@ -132,7 +137,8 @@ def get_full_leaderboard(competition_name: str) -> Dict[str, Any]:
         entries = []
         seen = set()
         while True:
-            resp = client.competitions.competition_api_client.get_leaderboard(req)
+            # resp = client.competitions.competition_api_client.get_leaderboard(req)
+            resp = get_next_page(client, req)
             entries.extend(resp.submissions)
             token = getattr(resp, "nextPageToken", None)
             token = token or getattr(resp, "next_page_token", None)
@@ -169,6 +175,7 @@ def get_full_leaderboard(competition_name: str) -> Dict[str, Any]:
         "private_median": statistics.median(private_scores) if private_scores else 0,
         "total_submissions": len(pub_entries),
     }
+
 
 
 def get_leaderboard_rank_medal(leaderboard_scores, my_score):
@@ -240,12 +247,29 @@ def get_leaderboard_rank_medal(leaderboard_scores, my_score):
     return rank, medal, round(percentile, 6), above_median
 
 
+def _load_offline_leaderboard_stats() -> Dict[str, Any]:
+    """Load and combine offline leaderboard stats from JSON files."""
+    import json
+    from glob import glob
+    from dsgym.datasets.config import REPO_ROOT
+    
+    offline_dir = REPO_ROOT / "data" / "DSPredict_Offline_Leaderboard"
+    combined = {}
+    for json_file in glob(str(offline_dir / "*.json")):
+        with open(json_file, "r") as f:
+            data = json.load(f)
+            combined.update(data)
+    return combined
+
+
 class KaggleSubmissionMetric(BaseMetric):
     """Metric that submits a Kaggle submission.csv and reports leaderboard-aware scores."""
 
-    def __init__(self, timeout_minutes: int = 10, **kwargs):
+    def __init__(self, timeout_minutes: int = 10, online: bool = False, **kwargs):
         super().__init__(**kwargs)
         self.timeout_minutes = timeout_minutes
+        self.online = online
+        self._offline_stats = None  # Lazy-loaded
 
     @property
     def name(self) -> str:
@@ -255,6 +279,19 @@ class KaggleSubmissionMetric(BaseMetric):
     def requires_ground_truth(self) -> bool:
         return False
 
+    # @retry(wait=wait_random(2, 5), stop=stop_after_attempt(5))
+    def _submit_via_api(self, challenge_name, submission_path):
+        manager = DSPredictSubmissionManager()
+
+        ref = manager.submit_file(
+            competition_name=challenge_name,
+            file_path=submission_path,
+            description=f"DSGym auto submission {challenge_name}",
+        )
+
+        score_info = manager.wait_for_submission(ref, timeout_minutes=self.timeout_minutes)
+
+        return score_info
     def evaluate(
         self,
         prediction: str,
@@ -274,6 +311,15 @@ class KaggleSubmissionMetric(BaseMetric):
         extra_info = kwargs.get("extra_info", {}) 
         print(extra_info)
         print(prediction)
+        challenge_name = extra_info.get("challenge_name")
+        
+        # Get leaderboard stats (online or offline)
+        if self.online:
+            leaderboard_stats = get_full_leaderboard(challenge_name)
+        else:
+            if self._offline_stats is None:
+                self._offline_stats = _load_offline_leaderboard_stats()
+            leaderboard_stats = self._offline_stats.get(challenge_name, {})
         try:
             # Determine submission file path
             submission_path = (prediction or "").strip()
@@ -281,32 +327,21 @@ class KaggleSubmissionMetric(BaseMetric):
                 return MetricResult(
                     metric_name=self.name,
                     score=None,
-                    details={"reason": "submission file not found", "prediction": prediction},
+                    details={"reason": "submission file not found", "prediction": prediction, "leaderboard_stats": leaderboard_stats},
                 )
-            # Competition name
-            challenge_name = extra_info.get("challenge_name")
 
             if not challenge_name:
                 return MetricResult(
                     metric_name=self.name,
                     score=None,
-                    details={"reason": "challenge_name not provided", "submission": submission_path},
+                    details={"reason": "challenge_name not provided", "submission": submission_path, "leaderboard_stats": leaderboard_stats},
                 )
 
             # Submit and wait
-            manager = KaggleSubmissionManager()
-
-            ref = manager.submit_file(
-                competition_name=challenge_name,
-                file_path=submission_path,
-                description=f"DSGym auto submission {challenge_name}",
-            )
-
-            score_info = manager.wait_for_submission(ref, timeout_minutes=self.timeout_minutes)
+            score_info = self._submit_via_api(challenge_name, submission_path)
             status = str(score_info.pop("status", "")).upper()
 
             # Pull leaderboard stats and enrich
-            leaderboard_stats = get_full_leaderboard(challenge_name)
             pub = _safe_float(score_info.get("public_score"))
             priv = _safe_float(score_info.get("private_score"))
             if pub is not None and leaderboard_stats.get("public_scores"):
@@ -336,8 +371,7 @@ class KaggleSubmissionMetric(BaseMetric):
 
             # Main metric score is the public score when available
             score = pub if pub is not None else None
-            print(score)
-            print(details)
+
             return MetricResult(
                 metric_name=self.name,
                 score=score,
@@ -346,12 +380,13 @@ class KaggleSubmissionMetric(BaseMetric):
             )
 
         except Exception as e:
-            print(f"Error computing KaggleSubmission Metrics: {e}")
+            print(f"Error computing KaggleSubmission Metrics: {e}, {challenge_name}")
+            import traceback
+            traceback.print_exc()
             return MetricResult(
                 metric_name=self.name,
                 score=None,
-                details={"error": str(e)},
+                details={"error": str(e), "leaderboard_stats": leaderboard_stats},
                 error=str(e),
                 evaluation_time=time.time() - start,
             )
-

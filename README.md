@@ -108,7 +108,7 @@ To run DSPredict, ensure your Kaggle API credentials are correctly configured. G
 export KAGGLE_API_TOKEN=$YOUR_KEY
 ```
 
-See the [Kaggle API documentation](https://www.kaggle.com/docs/api) for more details.
+See the [Kaggle API documentation](https://www.kaggle.com/docs/api) for more details. Note that for online assessment, you will have to manually enroll in the competitions (on your account) in order to submit. This will take a bit of time at the beginning. Alternatively, you can use the offline leaderboard for evaluation, which compares submissions against cached leaderboard data. However, this will still require manual enrollment into the competition. (you will see a 403 error if you don't enroll).
 
 
 #### Using Example Scripts
