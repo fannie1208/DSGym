@@ -112,8 +112,8 @@ class AllocatedCodeEnv(BaseTextEnv):
             return action
             
         # Truncate at </code> tag if present
-        if "</code>" in action:
-            return action.split("</code>")[0] + "</code>"
+        if "</python>" in action:
+            return action.split("</python>")[0] + "</python>"
         # Truncate at </answer> tag if present
         elif "</answer>" in action:
             return action.split("</answer>")[0] + "</answer>"
@@ -194,7 +194,7 @@ class AllocatedCodeEnv(BaseTextEnv):
                 self.chat_history.append(new_obs)
                 new_observations.append(new_obs)
             else:
-                new_obs = {"role": "user", "content": "<information>No python code found. You should either write python code within the <code>CODE</code> tag or write the answer in the <answer>ANSWER</answer> tag.</information>"}
+                new_obs = {"role": "user", "content": "<information>No python code found. You should either write python code within the <python>CODE</python> tag or write the answer in the <answer>ANSWER</answer> tag.</information>"}
                 self.chat_history.append(new_obs)
                 new_observations.append(new_obs)
                 
@@ -252,8 +252,8 @@ class AllocatedCodeEnv(BaseTextEnv):
     
     def _parse_action(self, action: str) -> Optional[str]:
         match = None
-        if action and "<code>" in action and "</code>" in action:
-            match = re.search(r"<code>(.*?)</code>", action, re.DOTALL)
+        if action and "<python>" in action and "</python>" in action:
+            match = re.search(r"<python>(.*?)</python>", action, re.DOTALL)
             if match:
                 code = match.group(1)
                 if "```python" in code and "```" in code:
